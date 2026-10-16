@@ -1,0 +1,217 @@
+import React, { useState } from 'react'
+import { ArrowUpRight, Clock, MapPin, Sparkles } from 'lucide-react'
+
+export default function NajlaSessionsSection({ onOpenBooking, onSelectService }) {
+  const sessions = [
+    {
+      id: '01',
+      number: '/01',
+      badge: 'CLINICAL SKINCARE',
+      price: 'Rs. 8,500',
+      duration: '60 Min',
+      title: 'HydraFacial MD Cellular Rejuvenation',
+      description:
+        'Vortex exfoliation, antioxidant infusion, and cellular deep pore hydration for long-lasting radiant glass skin.',
+      thumbnail:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b728_Service%20Image%205.jpg',
+      bgImage:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b627/69db201b114de85f9288b7bd_About%20Image%201.webp',
+      gradient: 'from-[#EAF2F8]/85 via-[#F3EDF7]/75 to-white/95',
+    },
+    {
+      id: '02',
+      number: '/02',
+      badge: 'SIGNATURE BRIDAL',
+      price: 'Rs. 35,000+',
+      duration: '180 Min',
+      title: 'Couture Bridal Artistry & Glow',
+      description:
+        'Bespoke Barat & Walima makeover crafted with luxury international cosmetics (MAC, Charlotte Tilbury, NARS).',
+      thumbnail:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b627/69db201b114de85f9288b801_Hero%20Image%2003.jpg',
+      bgImage:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b627/69db201b114de85f9288b801_Hero%20Image%2003.jpg',
+      gradient: 'from-[#F9EFEA]/85 via-[#F8EEF2]/75 to-white/95',
+    },
+    {
+      id: '03',
+      number: '/03',
+      badge: 'HAIR ARTISTRY',
+      price: 'Rs. 18,000+',
+      duration: '180 Min',
+      title: 'Nanoplastia Cuticle Smoothing',
+      description:
+        'Formaldehyde-free bio-amino treatment that locks in liquid mirror shine and beats coastal Karachi humidity.',
+      thumbnail:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b729_Service%20Image%206.jpg',
+      bgImage:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b627/69db201b114de85f9288b7e5_About%20Image%203.webp',
+      gradient: 'from-[#EAF2F5]/85 via-[#EDF0F7]/75 to-white/95',
+    },
+    {
+      id: '04',
+      number: '/04',
+      badge: 'DERMAL THERAPY',
+      price: 'Rs. 6,500',
+      duration: '75 Min',
+      title: 'Derma Whitening Glo Infusion',
+      description:
+        'Botanical glutathione and brightening peel targeting hyperpigmentation, sun exposure, and dull skin texture.',
+      thumbnail:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b727_Service%20Image%207.jpg',
+      bgImage:
+        'https://cdn.prod.website-files.com/69db201b114de85f9288b627/69db201b114de85f9288b802_Hero%20Image%2001.jpg',
+      gradient: 'from-[#F3EFF8]/85 via-[#F7F2EC]/75 to-white/95',
+    },
+  ]
+
+  const handleCardClick = (session) => {
+    if (onSelectService) {
+      onSelectService({
+        title: session.title,
+        price: session.price,
+        duration: session.duration,
+        category: session.badge,
+        description: session.description,
+      })
+    } else if (onOpenBooking) {
+      onOpenBooking()
+    }
+  }
+
+  return (
+    <section id="sessions" className="w-full py-20 sm:py-28 bg-white border-b border-[#EAEAEB] overflow-hidden">
+      <div className="w-full px-6 sm:px-10 lg:px-14">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-[#EAEAEB] rounded-full text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-3 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#ED5642]" />
+              EXCLUSIVE BEAUTY SESSIONS
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+              Curated therapeutic & beauty sessions.
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <span className="text-xs font-semibold text-[#5A5A63] hidden sm:inline">
+              Available across all 9 Karachi Flagship branches
+            </span>
+            <button
+              onClick={onOpenBooking}
+              className="skinenvy-btn-primary flex items-center gap-2 group text-xs py-2.5 px-6 shadow-sm rounded-full"
+            >
+              <span>Book A Session</span>
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* 4 Identical, Unified Vertical Cards strictly matching the reference layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch">
+          {sessions.map((session) => (
+            <div
+              key={session.id}
+              onClick={() => handleCardClick(session)}
+              className="group relative min-h-[540px] sm:min-h-[580px] lg:min-h-[610px] rounded-3xl border border-[#EAEAEB] bg-white flex flex-col justify-between overflow-hidden cursor-pointer card-hover shadow-xs transition-all duration-500"
+            >
+              {/* Layer 1: Ethereal Atmospheric Background Photography with Dreamy Blur */}
+              <div className="absolute inset-0 overflow-hidden bg-[#F7F7F8]">
+                <img
+                  src={session.bgImage}
+                  alt={session.title}
+                  className="w-full h-full object-cover object-center filter blur-[1.5px] scale-105 opacity-45 transition-all duration-700 ease-out group-hover:scale-110 group-hover:opacity-55"
+                />
+              </div>
+
+              {/* Layer 2: Soft Ambient Luminous Pastel Gradient Overlay */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-b ${session.gradient} transition-opacity duration-500`}
+              />
+
+              {/* Layer 3: Vertical Prism Glass Refraction Scanline Effect (from the reference) */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.45)_1px,transparent_1px)] bg-[size:36px_100%] opacity-40 pointer-events-none" />
+
+              {/* Layer 4: Top Row with Category Badge & Price Pill */}
+              <div className="relative z-10 p-6 sm:p-7 flex items-center justify-between">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#ED5642] bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#EAEAEB] shadow-xs">
+                  {session.badge}
+                </span>
+                <span className="text-xs font-bold text-[#1E1E24] bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#EAEAEB] shadow-xs">
+                  {session.price}
+                </span>
+              </div>
+
+              {/* Layer 5: Middle Ambient Spacer */}
+              <div className="relative z-10 flex-1" />
+
+              {/* Layer 6: Signature Bottom Content Box (Identical across ALL 4 cards) */}
+              <div className="relative z-10 p-6 sm:p-7 pt-5 bg-gradient-to-t from-white via-white/90 to-transparent">
+                {/* Thumbnail & Counter Row */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-2xl border border-[#EAEAEB] overflow-hidden bg-white shadow-xs group-hover:border-[#ED5642] transition-colors">
+                    <img
+                      src={session.thumbnail}
+                      alt={session.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+
+                  <span className="text-sm font-extrabold text-[#5A5A63] tracking-widest font-mono">
+                    {session.number}
+                  </span>
+                </div>
+
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#1E1E24] leading-snug tracking-tight mb-2 group-hover:text-[#ED5642] transition-colors">
+                  {session.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-xs text-[#5A5A63] leading-relaxed line-clamp-3 mb-4">
+                  {session.description}
+                </p>
+
+                {/* Interactive Meta Bar: Duration & Reserve Button */}
+                <div className="pt-3 border-t border-[#EAEAEB] flex items-center justify-between text-xs font-bold text-[#ED5642]">
+                  <span className="flex items-center gap-1.5 text-[#5A5A63] font-semibold">
+                    <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
+                    <span>{session.duration}</span>
+                  </span>
+
+                  <span className="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span>Reserve</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Concierge Note */}
+        <div className="mt-12 pt-8 border-t border-[#EAEAEB] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5A5A63]">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 bg-[#ED5642]" />
+            <span className="font-semibold text-[#1E1E24]">
+              Personalized Consultations Available Prior to Every Treatment Session
+            </span>
+          </div>
+
+          <div className="flex items-center gap-4 font-bold">
+            <a
+              href="https://wa.me/923341430303?text=Hi%20Najla’s,%20I%20want%20to%20inquire%20about%20your%20therapeutic%20and%20bridal%20sessions."
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#1EBE5D] hover:underline flex items-center gap-1"
+            >
+              <span>Instant WhatsApp Concierge: 0334-1430303</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
