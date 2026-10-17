@@ -29,7 +29,7 @@ export default function SkinEnvyAbout({ onScrollToShop, onOpenBooking }) {
         {/* ================= RIGHT COLUMN: HEADLINE + 2-COLUMN BOTTOM ================= */}
         <div className="lg:col-span-9 flex flex-col gap-10 sm:gap-12">
           {/* Editorial Headline matching screenshot */}
-          <h2 className="text-2xl sm:text-4xl lg:text-[2.65rem] font-normal text-[#1E1E24] leading-[1.25] tracking-tight max-w-4xl scroll-reveal">
+          <h2 className="font-serif-editorial text-2xl sm:text-4xl lg:text-[2.65rem] font-normal text-[#1E1E24] leading-[1.25] tracking-tight max-w-4xl scroll-reveal">
             Your wellness retreat starts right here with restorative therapies, skilled professionals, and a truly refreshing spa experience.
           </h2>
 

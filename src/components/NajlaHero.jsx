@@ -81,7 +81,7 @@ export default function NajlaHero({ onOpenBooking, onScrollToServices, selectedB
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-[4.2rem] font-bold tracking-tight text-[#1E1E24] leading-[1.08] mb-6">
+          <h1 className="font-serif-editorial text-4xl sm:text-6xl lg:text-[4.2rem] font-semibold tracking-tight text-[#1E1E24] leading-[1.08] mb-6">
             {slides[current].headline}
           </h1>
 
