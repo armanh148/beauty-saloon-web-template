@@ -55,10 +55,10 @@ export default function SkinEnvyTestimonials({ onOpenBooking }) {
         {/* All in one single line on desktop: Heading block (Col 1), Review Card 1 (Col 2), Review Card 2 (Col 3) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {/* ================= COLUMN 1: HEADING & CTA ================= */}
-          <div className="flex flex-col justify-between py-2">
+          <div className="flex flex-col justify-between py-2 scroll-reveal-left">
             <div>
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-[#EAEAEB] rounded-full text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-3 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-[#ED5642]" />
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-[#EAEAEB] rounded-full text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-3 shadow-2xs hover:border-[#ED5642] transition-colors duration-300">
+                <span className="w-2 h-2 rounded-full bg-[#ED5642] animate-pulse" />
                 CLIENT EXPERIENCES
               </span>
 
@@ -74,36 +74,36 @@ export default function SkinEnvyTestimonials({ onOpenBooking }) {
             <div>
               <button
                 onClick={onOpenBooking}
-                className="skinenvy-btn-primary flex items-center gap-2 group w-fit cursor-pointer rounded-full"
+                className="skinenvy-btn-primary flex items-center gap-2 group w-fit cursor-pointer rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <span>Make an appointment</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </button>
             </div>
           </div>
 
           {/* ================= COLUMN 2: REVIEW CARD 1 ================= */}
-          <div className="bg-[#F7F7F8]/60 hover:bg-white border border-[#EAEAEB] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-xs card-hover transition-all duration-300">
+          <div className="scroll-reveal delay-100 bg-[#F7F7F8]/60 hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-xs card-hover hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group">
             <div>
-              <div className="w-10 h-10 rounded-2xl bg-[#ED5642]/10 text-[#ED5642] flex items-center justify-center mb-6">
+              <div className="w-10 h-10 rounded-2xl bg-[#ED5642]/10 text-[#ED5642] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300">
                 <Quote className="w-5 h-5 rotate-180" />
               </div>
 
-              <p className="text-base sm:text-lg font-bold text-[#1E1E24] leading-[1.4] tracking-tight mb-8">
+              <p className="text-base sm:text-lg font-bold text-[#1E1E24] leading-[1.4] tracking-tight mb-8 group-hover:text-[#ED5642] transition-colors duration-300">
                 {review1.quote}
               </p>
             </div>
 
             <div className="pt-6 border-t border-[#EAEAEB] flex items-center gap-3.5 mt-auto">
-              <div className="w-11 h-11 rounded-full overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] flex-shrink-0 shadow-xs">
+              <div className="w-11 h-11 rounded-full overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] group-hover:border-[#ED5642] flex-shrink-0 shadow-xs transition-colors duration-300">
                 <img
                   src={review1.image}
                   alt={review1.author}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="min-w-0">
-                <h5 className="font-bold text-sm text-[#1E1E24]">{review1.author}</h5>
+                <h5 className="font-bold text-sm text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">{review1.author}</h5>
                 <p className="text-[11px] text-[#71717A] leading-tight mt-0.5 truncate">
                   {review1.service} • {review1.time}
                 </p>
@@ -112,28 +112,28 @@ export default function SkinEnvyTestimonials({ onOpenBooking }) {
           </div>
 
           {/* ================= COLUMN 3: REVIEW CARD 2 (SIDE-BY-SIDE IN SAME LINE) ================= */}
-          <div className="bg-[#F7F7F8]/60 hover:bg-white border border-[#EAEAEB] rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-xs card-hover transition-all duration-300">
+          <div className="scroll-reveal-right delay-200 bg-[#F7F7F8]/60 hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-3xl p-7 sm:p-8 flex flex-col justify-between shadow-xs card-hover hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group">
             <div>
-              <div className="w-10 h-10 rounded-2xl bg-[#ED5642]/10 text-[#ED5642] flex items-center justify-center mb-6">
+              <div className="w-10 h-10 rounded-2xl bg-[#ED5642]/10 text-[#ED5642] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300">
                 <Quote className="w-5 h-5 rotate-180" />
               </div>
 
-              <p className="text-base sm:text-lg font-bold text-[#1E1E24] leading-[1.4] tracking-tight mb-8">
+              <p className="text-base sm:text-lg font-bold text-[#1E1E24] leading-[1.4] tracking-tight mb-8 group-hover:text-[#ED5642] transition-colors duration-300">
                 {review2.quote}
               </p>
             </div>
 
             <div className="pt-6 border-t border-[#EAEAEB] flex items-center justify-between gap-3 mt-auto">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-11 h-11 rounded-full overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] flex-shrink-0 shadow-xs">
+                <div className="w-11 h-11 rounded-full overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] group-hover:border-[#ED5642] flex-shrink-0 shadow-xs transition-colors duration-300">
                   <img
                     src={review2.image}
                     alt={review2.author}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="min-w-0">
-                  <h5 className="font-bold text-sm text-[#1E1E24] truncate">{review2.author}</h5>
+                  <h5 className="font-bold text-sm text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">{review2.author}</h5>
                   <p className="text-[11px] text-[#71717A] leading-tight mt-0.5 truncate">
                     {review2.service} • {review2.time}
                   </p>

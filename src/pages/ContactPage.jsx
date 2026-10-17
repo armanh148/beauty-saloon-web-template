@@ -124,7 +124,7 @@ export default function ContactPage({ onOpenBooking }) {
       {/* Header Banner */}
       <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl scroll-reveal">
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
@@ -141,11 +141,11 @@ export default function ContactPage({ onOpenBooking }) {
       </section>
 
       {/* Main Contact Grid: Inquiry Form & Quick Helpline Box */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
+      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white overflow-hidden">
         <div className="w-full px-6 sm:px-10 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left: Quick Helpline Cards */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="lg:col-span-5 flex flex-col gap-6 scroll-reveal-left">
               <div>
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
                   CENTRAL HELPLINE
@@ -158,33 +158,33 @@ export default function ContactPage({ onOpenBooking }) {
                 </p>
               </div>
 
-              <div className="p-7 bg-[#F7F7F8] border border-[#EAEAEB] flex flex-col gap-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0">
+              <div className="p-7 bg-[#F7F7F8] border border-[#EAEAEB] flex flex-col gap-5 hover:border-[#ED5642]/40 transition-all duration-300 shadow-xs hover:shadow-md">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300 shadow-xs">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8B8B93] block">Direct Phone Helpline</span>
-                    <a href="tel:03341430303" className="text-lg font-extrabold text-[#1E1E24] hover:text-[#ED5642] transition-colors">
+                    <a href="tel:03341430303" className="text-lg font-extrabold text-[#1E1E24] hover:text-[#ED5642] transition-colors inline-block hover:translate-x-1 duration-200">
                       0334-1430303
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#1EBE5D] flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#1EBE5D] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#1EBE5D] group-hover:text-white transition-all duration-300 shadow-xs">
                     <MessageCircle className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8B8B93] block">Official WhatsApp Support</span>
-                    <a href="https://wa.me/923341430303" target="_blank" rel="noreferrer" className="text-lg font-extrabold text-[#1EBE5D] hover:underline">
+                    <a href="https://wa.me/923341430303" target="_blank" rel="noreferrer" className="text-lg font-extrabold text-[#1EBE5D] hover:underline inline-block hover:translate-x-1 duration-200">
                       0334-1430303 (Instant Reply)
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300 shadow-xs">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -198,7 +198,7 @@ export default function ContactPage({ onOpenBooking }) {
             </div>
 
             {/* Right: Direct Contact Form */}
-            <div className="lg:col-span-7 bg-[#F7F7F8] p-8 sm:p-12 border border-[#EAEAEB]">
+            <div className="lg:col-span-7 bg-[#F7F7F8] p-8 sm:p-12 border border-[#EAEAEB] scroll-reveal-right delay-200 hover:border-[#ED5642]/30 transition-all duration-300 shadow-xs">
               <h3 className="text-2xl font-bold text-[#1E1E24] mb-2">Send an Instant Inquiry</h3>
               <p className="text-xs text-[#5A5A63] mb-8">
                 Fill in your details to immediately forward your inquiry to our central reservation desk.
@@ -225,7 +225,7 @@ export default function ContactPage({ onOpenBooking }) {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Ayesha Malik"
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642]"
+                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       />
                     </div>
 
@@ -239,7 +239,7 @@ export default function ContactPage({ onOpenBooking }) {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="e.g. 0300-1234567"
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642]"
+                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       />
                     </div>
                   </div>
@@ -252,7 +252,7 @@ export default function ContactPage({ onOpenBooking }) {
                       <select
                         value={formData.branch}
                         onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642]"
+                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       >
                         {branches.map((b) => (
                           <option key={b.id} value={b.name}>{b.name}</option>
@@ -267,7 +267,7 @@ export default function ContactPage({ onOpenBooking }) {
                       <select
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642]"
+                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       >
                         <option value="Bridal Makeover (Barat / Walima)">Bridal Makeover (Barat / Walima)</option>
                         <option value="HydraFacial MD 7-Step">HydraFacial MD 7-Step</option>
@@ -287,13 +287,13 @@ export default function ContactPage({ onOpenBooking }) {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Specify your wedding date, branch preferences, or service questions..."
-                      className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642]"
+                      className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="skinenvy-btn-primary flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    className="skinenvy-btn-primary flex items-center justify-center gap-2 cursor-pointer mt-2 hover:shadow-lg transition-all duration-300 hover:scale-[1.01]"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Message on WhatsApp</span>
@@ -308,7 +308,7 @@ export default function ContactPage({ onOpenBooking }) {
       {/* Complete 9 Karachi Branches Directory */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 scroll-reveal">
             <div className="max-w-xl">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
                 KARACHI DIRECTORY
@@ -324,9 +324,9 @@ export default function ContactPage({ onOpenBooking }) {
                 <button
                   key={area}
                   onClick={() => setActiveArea(area)}
-                  className={`px-4 py-2 text-xs font-bold transition-all cursor-pointer border ${
+                  className={`px-4 py-2 text-xs font-bold transition-all duration-300 cursor-pointer border hover:-translate-y-0.5 ${
                     activeArea === area
-                      ? 'bg-[#ED5642] text-white border-[#ED5642]'
+                      ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm'
                       : 'bg-white text-[#5A5A63] hover:bg-[#EAEAEB] border-[#EAEAEB]'
                   }`}
                 >
@@ -337,14 +337,14 @@ export default function ContactPage({ onOpenBooking }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((b) => (
+            {filtered.map((b, idx) => (
               <div
                 key={b.id}
-                className="bg-white p-7 border border-[#EAEAEB] flex flex-col justify-between card-hover shadow-xs"
+                className={`bg-white p-7 border border-[#EAEAEB] flex flex-col justify-between card-hover shadow-xs group scroll-reveal-scale scroll-reveal-delay-${(idx % 4) + 1}`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-[#F7F7F8] px-2.5 py-1 border border-[#EAEAEB]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-[#F7F7F8] px-2.5 py-1 border border-[#EAEAEB] group-hover:border-[#ED5642]/30 transition-colors">
                       {b.area}
                     </span>
                     <span className="text-xs text-[#8B8B93] flex items-center gap-1">
@@ -353,11 +353,11 @@ export default function ContactPage({ onOpenBooking }) {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#1E1E24] mb-1">{b.name}</h3>
+                  <h3 className="text-lg font-bold text-[#1E1E24] mb-1 group-hover:text-[#ED5642] transition-colors">{b.name}</h3>
                   <span className="text-xs font-semibold text-[#ED5642] block mb-4">{b.highlight}</span>
 
                   <p className="text-xs text-[#5A5A63] leading-relaxed mb-6 flex items-start gap-2">
-                    <MapPin className="w-4 h-4 text-[#8B8B93] flex-shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-[#8B8B93] flex-shrink-0 mt-0.5 group-hover:text-[#ED5642] group-hover:animate-bounce-subtle transition-colors" />
                     <span>{b.address}</span>
                   </p>
                 </div>
@@ -375,7 +375,7 @@ export default function ContactPage({ onOpenBooking }) {
                     href={`https://wa.me/${b.whatsapp}?text=Hi%20Najla's,%20I%20would%20like%20to%20visit%20your%20${encodeURIComponent(b.name)}%20branch`}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs font-bold text-[#1EBE5D] hover:underline flex items-center gap-1"
+                    className="text-xs font-bold text-[#1EBE5D] hover:underline flex items-center gap-1 hover:translate-x-0.5 transition-transform"
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
                     <span>WhatsApp</span>

@@ -88,7 +88,7 @@ export default function ReviewsPage({ onOpenBooking }) {
       {/* Extended Client Reviews Grid */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 scroll-reveal">
             <div className="max-w-xl">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
                 RECENT TESTIMONIALS
@@ -98,7 +98,7 @@ export default function ReviewsPage({ onOpenBooking }) {
               </h2>
             </div>
 
-            <div className="flex items-center gap-2 p-3 bg-[#F7F7F8] border border-[#EAEAEB] text-xs font-bold text-[#1E1E24]">
+            <div className="flex items-center gap-2 p-3.5 bg-[#F7F7F8] hover:bg-[#FDF6F4] border border-[#EAEAEB] hover:border-[#ED5642]/30 rounded-2xl text-xs font-bold text-[#1E1E24] transition-all duration-300 shadow-2xs">
               <div className="flex text-[#ED5642]">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-current" />
@@ -109,33 +109,36 @@ export default function ReviewsPage({ onOpenBooking }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {extendedReviews.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F7F7F8] border border-[#EAEAEB] p-7 flex flex-col justify-between card-hover"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex text-[#ED5642]">
-                      {[...Array(item.stars)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                      ))}
+            {extendedReviews.map((item, idx) => {
+              const delayClass = `scroll-reveal-delay-${(idx % 6) + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 p-7 rounded-2xl flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex text-[#ED5642] group-hover:scale-105 transition-transform">
+                        {[...Array(item.stars)].map((_, i) => (
+                          <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                        ))}
+                      </div>
+                      <span className="text-[10px] text-[#8B8B93] uppercase tracking-wider">{item.date}</span>
                     </div>
-                    <span className="text-[10px] text-[#8B8B93] uppercase tracking-wider">{item.date}</span>
+
+                    <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-6 italic group-hover:text-[#1E1E24] transition-colors duration-300">
+                      "{item.review}"
+                    </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-6 italic">
-                    "{item.review}"
-                  </p>
+                  <div className="pt-4 border-t border-[#EAEAEB]">
+                    <h4 className="font-bold text-sm text-[#1E1E24] group-hover:text-[#ED5642] transition-colors duration-300">{item.author}</h4>
+                    <span className="text-[11px] text-[#ED5642] font-semibold block">{item.treatment}</span>
+                    <span className="text-[10px] text-[#8B8B93] block mt-0.5">{item.branch}</span>
+                  </div>
                 </div>
-
-                <div className="pt-4 border-t border-[#EAEAEB]">
-                  <h4 className="font-bold text-sm text-[#1E1E24]">{item.author}</h4>
-                  <span className="text-[11px] text-[#ED5642] font-semibold block">{item.treatment}</span>
-                  <span className="text-[10px] text-[#8B8B93] block mt-0.5">{item.branch}</span>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

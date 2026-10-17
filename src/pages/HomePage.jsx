@@ -33,49 +33,31 @@ export default function HomePage({
       <NajlaTickerRibbon />
 
       {/* 4 Numbers / Stats Banner */}
-      <div className="scroll-reveal">
-        <SkinEnvyStats />
-      </div>
+      <SkinEnvyStats />
 
       {/* About Section */}
-      <div className="scroll-reveal">
-        <SkinEnvyAbout onOpenBooking={onOpenBooking} />
-      </div>
+      <SkinEnvyAbout onOpenBooking={onOpenBooking} />
 
       {/* Comprehensive Services (Bento Grid) */}
-      <div className="scroll-reveal">
-        <NajlaServices onSelectService={onSelectService} />
-      </div>
+      <NajlaServices onSelectService={onSelectService} />
 
       {/* Exclusive 4-Card Sessions Section */}
-      <div className="scroll-reveal">
-        <NajlaSessionsSection
-          onOpenBooking={onOpenBooking}
-          onSelectService={onSelectService}
-        />
-      </div>
+      <NajlaSessionsSection
+        onOpenBooking={onOpenBooking}
+        onSelectService={onSelectService}
+      />
 
       {/* Master Beauty Professionals & Directors */}
-      <div className="scroll-reveal">
-        <SkinEnvyTeam onOpenBooking={onOpenBooking} />
-      </div>
+      <SkinEnvyTeam onOpenBooking={onOpenBooking} />
 
       {/* Client Testimonials (3 Reviews in a Line) */}
-      <div className="scroll-reveal">
-        <SkinEnvyTestimonials onOpenBooking={onOpenBooking} />
-      </div>
+      <SkinEnvyTestimonials onOpenBooking={onOpenBooking} />
 
       {/* FAQ Section */}
-      <div className="scroll-reveal">
-        <SkinEnvyFaq onOpenBooking={onOpenBooking} />
-      </div>
-
-
+      <SkinEnvyFaq onOpenBooking={onOpenBooking} />
 
       {/* Editorial Journal / Blog */}
-      <div className="scroll-reveal">
-        <SkinEnvyBlog />
-      </div>
+      <SkinEnvyBlog />
     </div>
   )
 }

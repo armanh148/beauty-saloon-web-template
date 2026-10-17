@@ -105,7 +105,7 @@ export default function NajlaBranches({ onBookBranch }) {
     <section id="branches" className="bg-[#F7F7F8] text-[#1E1E24] py-24 sm:py-32 overflow-hidden border-b border-[#EAEAEB]">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 scroll-reveal">
           <div className="max-w-xl">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               KARACHI NETWORK
@@ -121,10 +121,10 @@ export default function NajlaBranches({ onBookBranch }) {
               <button
                 key={area}
                 onClick={() => setActiveArea(area)}
-                className={`px-4 py-2 text-xs font-bold transition-all cursor-pointer border ${
+                className={`px-4 py-2 text-xs font-bold rounded-full transition-all duration-300 cursor-pointer border ${
                   activeArea === area
-                    ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm'
-                    : 'bg-white text-[#5A5A63] hover:bg-[#EAEAEB] border-[#EAEAEB]'
+                    ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm scale-105'
+                    : 'bg-white text-[#5A5A63] hover:bg-[#EAEAEB] hover:text-[#1E1E24] border-[#EAEAEB] hover:-translate-y-0.5'
                 }`}
               >
                 {area}
@@ -135,67 +135,70 @@ export default function NajlaBranches({ onBookBranch }) {
 
         {/* 9 Branch Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map((branch) => (
-            <div
-              key={branch.id}
-              className="bg-white p-7 border border-[#EAEAEB] card-hover flex flex-col justify-between group shadow-xs"
-            >
-              <div>
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <h4 className="text-xl font-bold text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">
-                    {branch.name}
-                  </h4>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-[#ED5642]/10 text-[#ED5642] px-2.5 py-1">
-                    {branch.area}
-                  </span>
+          {filtered.map((branch, idx) => {
+            const delayClass = `scroll-reveal-delay-${(idx % 6) + 1}`
+            return (
+              <div
+                key={branch.id}
+                className={`scroll-reveal ${delayClass} bg-white p-7 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 card-hover flex flex-col justify-between group shadow-xs hover:-translate-y-2 hover:shadow-2xl transition-all duration-500`}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h4 className="text-xl font-bold text-[#1E1E24] group-hover:text-[#ED5642] transition-colors duration-300">
+                      {branch.name}
+                    </h4>
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-[#ED5642]/10 text-[#ED5642] px-2.5 py-1 rounded-full group-hover:bg-[#ED5642] group-hover:text-white transition-colors duration-300">
+                      {branch.area}
+                    </span>
+                  </div>
+
+                  <div className="flex items-start gap-2.5 text-xs text-[#5A5A63] mb-4 leading-relaxed">
+                    <MapPin className="w-4 h-4 text-[#ED5642] flex-shrink-0 mt-0.5 group-hover:animate-bounce-subtle" />
+                    <span>{branch.address}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs text-[#8B8B93] mb-6">
+                    <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
+                    <span>{branch.hours}</span>
+                  </div>
+
+                  <div className="bg-[#F7F7F8] group-hover:bg-[#FDF6F4] p-3 rounded-xl border border-[#EAEAEB] group-hover:border-[#ED5642]/20 text-xs text-[#1E1E24] mb-6 transition-colors duration-300">
+                    <span className="text-[#ED5642] font-bold mr-1.5">Specialty:</span>
+                    {branch.highlight}
+                  </div>
                 </div>
 
-                <div className="flex items-start gap-2.5 text-xs text-[#5A5A63] mb-4 leading-relaxed">
-                  <MapPin className="w-4 h-4 text-[#ED5642] flex-shrink-0 mt-0.5" />
-                  <span>{branch.address}</span>
-                </div>
+                {/* Action Buttons */}
+                <div className="pt-4 border-t border-[#EAEAEB] flex items-center justify-between gap-3">
+                  <a
+                    href={`tel:${branch.phone.replace(/[^0-9]/g, '')}`}
+                    className="flex-1 py-2.5 bg-[#F7F7F8] hover:bg-[#1E1E24] text-[#1E1E24] hover:text-white border border-[#EAEAEB] hover:border-[#1E1E24] rounded-full text-xs font-bold text-center transition-all duration-300 flex items-center justify-center gap-1.5 shadow-2xs hover:shadow-xs"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>{branch.phone}</span>
+                  </a>
 
-                <div className="flex items-center gap-2 text-xs text-[#8B8B93] mb-6">
-                  <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
-                  <span>{branch.hours}</span>
-                </div>
+                  <a
+                    href={`https://wa.me/${branch.whatsapp}?text=Hi%20Najla’s,%20I%20would%20like%20to%20inquire%20about%20an%20appointment%20at%20your%20${encodeURIComponent(branch.name)}%20branch.`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-10 h-10 bg-[#1EBE5D] hover:bg-[#18A450] text-white rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 shadow-xs hover:scale-105"
+                    title="WhatsApp this branch"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
 
-                <div className="bg-[#F7F7F8] p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] mb-6">
-                  <span className="text-[#ED5642] font-bold mr-1.5">Specialty:</span>
-                  {branch.highlight}
+                  <button
+                    onClick={() => onBookBranch(branch.name)}
+                    className="px-4 py-2.5 bg-[#ED5642] hover:bg-[#D8432F] text-white rounded-full text-xs font-bold transition-all duration-300 cursor-pointer flex-shrink-0 shadow-xs hover:shadow-md hover:scale-105"
+                    title="Book at this branch"
+                  >
+                    Book
+                  </button>
                 </div>
               </div>
-
-              {/* Action Buttons */}
-              <div className="pt-4 border-t border-[#EAEAEB] flex items-center justify-between gap-3">
-                <a
-                  href={`tel:${branch.phone.replace(/[^0-9]/g, '')}`}
-                  className="flex-1 py-2.5 bg-[#F7F7F8] hover:bg-[#1E1E24] text-[#1E1E24] hover:text-white border border-[#EAEAEB] hover:border-[#1E1E24] text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5"
-                >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>{branch.phone}</span>
-                </a>
-
-                <a
-                  href={`https://wa.me/${branch.whatsapp}?text=Hi%20Najla’s,%20I%20would%20like%20to%20inquire%20about%20an%20appointment%20at%20your%20${encodeURIComponent(branch.name)}%20branch.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 bg-[#1EBE5D] hover:bg-[#18A450] text-white flex items-center justify-center transition-all flex-shrink-0 shadow-xs"
-                  title="WhatsApp this branch"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                </a>
-
-                <button
-                  onClick={() => onBookBranch(branch.name)}
-                  className="px-4 py-2.5 bg-[#ED5642] hover:bg-[#D8432F] text-white text-xs font-bold transition-all cursor-pointer flex-shrink-0 shadow-xs"
-                  title="Book at this branch"
-                >
-                  Book
-                </button>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

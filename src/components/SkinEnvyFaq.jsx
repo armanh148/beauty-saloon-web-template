@@ -46,7 +46,7 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
       <div className="w-full px-6 sm:px-10 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* ================= LEFT COLUMN: HEADER & STILL HAVE QUESTIONS CARD ================= */}
-          <div className="lg:col-span-5 flex flex-col justify-between h-full">
+          <div className="lg:col-span-5 flex flex-col justify-between h-full scroll-reveal-left">
             <div>
               {/* Header strictly matching reference image typography */}
               <h2 className="text-3xl sm:text-5xl lg:text-[3.2rem] font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4">
@@ -59,7 +59,7 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
             </div>
 
             {/* "Still have questions?" Card matching user's layout & styled to theme */}
-            <div className="bg-[#1E1E24] text-white p-7 sm:p-9 rounded-3xl border border-[#28282F] shadow-lg max-w-md mt-4">
+            <div className="bg-[#1E1E24] text-white p-7 sm:p-9 rounded-3xl border border-[#28282F] shadow-lg max-w-md mt-4 hover:border-[#ED5642]/60 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-400 group">
               {/* Avatar Cluster + "+ You" Pill */}
               <div className="flex items-center gap-2 mb-6">
                 <div className="flex -space-x-3">
@@ -68,17 +68,17 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
                       key={i}
                       src={img}
                       alt="Consultant"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#1E1E24]"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#1E1E24] group-hover:border-[#ED5642] transition-colors"
                     />
                   ))}
                 </div>
-                <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1 bg-white/10 text-white rounded-full border border-white/15">
+                <span className="text-[11px] font-bold tracking-wide uppercase px-3 py-1 bg-white/10 text-white rounded-full border border-white/15 group-hover:border-[#ED5642] group-hover:text-[#ED5642] transition-colors">
                   + You
                 </span>
               </div>
 
               {/* Title & Subtitle */}
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-white">
                 Still have questions?
               </h3>
               <p className="text-xs sm:text-sm text-[#DDDDDF] mb-6 leading-relaxed">
@@ -90,7 +90,7 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
                 href="https://wa.me/923341430303?text=Hi%20Najla's,%20I%20have%20a%20question%20regarding%20services"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-between w-full bg-[#28282F] hover:bg-[#ED5642] text-white px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 border border-white/15 group cursor-pointer shadow-sm hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-between w-full bg-[#28282F] hover:bg-[#ED5642] text-white px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 border border-white/15 group-hover:border-transparent cursor-pointer shadow-sm hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-2">
                   <MessageCircle className="w-4 h-4 text-[#1EBE5D] group-hover:text-white transition-colors" />
@@ -102,7 +102,7 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
           </div>
 
           {/* ================= RIGHT COLUMN: NUMBERED ACCORDION ================= */}
-          <div className="lg:col-span-7 flex flex-col gap-3 sm:gap-4">
+          <div className="lg:col-span-7 flex flex-col gap-3 sm:gap-4 scroll-reveal-right delay-200">
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx
               const number = idx + 1
@@ -112,8 +112,8 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
                   key={idx}
                   className={`transition-all duration-300 rounded-2xl overflow-hidden border ${
                     isOpen
-                      ? 'bg-[#1E1E24] text-white border-[#1E1E24] shadow-md'
-                      : 'bg-[#F7F7F8]/50 hover:bg-white text-[#1E1E24] border-[#EAEAEB] hover:border-[#C2C2C7]'
+                      ? 'bg-[#1E1E24] text-white border-[#1E1E24] shadow-md -translate-y-1'
+                      : 'bg-[#F7F7F8]/60 hover:bg-white text-[#1E1E24] border-[#EAEAEB] hover:border-[#ED5642]/50 hover:shadow-md hover:-translate-y-0.5'
                   }`}
                 >
                   <button
@@ -130,9 +130,9 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
 
                     <div className="flex-shrink-0 ml-2">
                       {isOpen ? (
-                        <Minus className="w-5 h-5 text-white" />
+                        <Minus className="w-5 h-5 text-white transform rotate-180 transition-transform duration-300" />
                       ) : (
-                        <Plus className="w-5 h-5 text-[#8B8B93] group-hover:text-[#ED5642] transition-colors" />
+                        <Plus className="w-5 h-5 text-[#8B8B93] group-hover:text-[#ED5642] group-hover:rotate-90 transition-all duration-300" />
                       )}
                     </div>
                   </button>

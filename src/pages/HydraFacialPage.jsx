@@ -96,18 +96,18 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
       </section>
 
       {/* Hero Visual & Feature Row */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
+      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white overflow-hidden">
         <div className="w-full px-6 sm:px-10 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 overflow-hidden border border-[#EAEAEB] aspect-[4/3] bg-[#EAEAEB]">
+            <div className="lg:col-span-6 overflow-hidden rounded-3xl border border-[#EAEAEB] group aspect-[4/3] bg-[#EAEAEB] shadow-md hover:shadow-2xl hover:border-[#ED5642]/40 transition-all duration-500 scroll-reveal-left">
               <img
                 src="https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b722_Blog%20Image%206.jpg"
                 alt="HydraFacial MD Treatment at Najla's"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105"
               />
             </div>
 
-            <div className="lg:col-span-6 flex flex-col justify-center">
+            <div className="lg:col-span-6 flex flex-col justify-center scroll-reveal-right delay-200">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
                 PATENTED TECHNOLOGY
               </span>
@@ -119,11 +119,11 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold text-[#1E1E24]">
-                <div className="p-4 bg-[#F7F7F8] border border-[#EAEAEB]">
+                <div className="p-4 bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/40 rounded-2xl transition-all duration-300 card-hover">
                   <span className="text-lg font-extrabold text-[#ED5642] block mb-1">0 Days</span>
                   <span>Zero Downtime or Redness</span>
                 </div>
-                <div className="p-4 bg-[#F7F7F8] border border-[#EAEAEB]">
+                <div className="p-4 bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/40 rounded-2xl transition-all duration-300 card-hover">
                   <span className="text-lg font-extrabold text-[#ED5642] block mb-1">30+ Days</span>
                   <span>Lasting Dewy Moisture</span>
                 </div>
@@ -136,7 +136,7 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
       {/* 7-Step Protocol Breakdown */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               THE 7-STEP PROTOCOL
             </span>
@@ -146,15 +146,21 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {steps.map((st, idx) => (
-              <div key={idx} className="bg-white p-7 border border-[#EAEAEB] flex flex-col justify-between card-hover">
-                <div>
-                  <span className="text-2xl font-extrabold text-[#ED5642] block mb-3">{st.num}</span>
-                  <h4 className="text-base font-bold text-[#1E1E24] mb-2">{st.title}</h4>
-                  <p className="text-xs text-[#5A5A63] leading-relaxed">{st.desc}</p>
+            {steps.map((st, idx) => {
+              const delayClass = `scroll-reveal-delay-${(idx % 4) + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} bg-white hover:bg-[#FDF6F4] p-7 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2.5 hover:shadow-xl transition-all duration-500 group cursor-default`}
+                >
+                  <div>
+                    <span className="text-2xl font-extrabold text-[#ED5642] block mb-3 group-hover:scale-115 transition-transform">{st.num}</span>
+                    <h4 className="text-base font-bold text-[#1E1E24] mb-2 group-hover:text-[#ED5642] transition-colors duration-300">{st.title}</h4>
+                    <p className="text-xs text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{st.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -162,7 +168,7 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
       {/* HydraFacial Packages */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               HYDRAFACIAL RATES
             </span>
@@ -172,46 +178,49 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {packages.map((pkg, idx) => (
-              <div
-                key={idx}
-                className={`p-7 border flex flex-col justify-between ${
-                  pkg.popular
-                    ? 'bg-white border-[#ED5642] shadow-md'
-                    : 'bg-[#F7F7F8] border-[#EAEAEB]'
-                }`}
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#ED5642] px-2.5 py-0.5">
-                      {pkg.tag}
-                    </span>
-                    <span className="text-xs text-[#8B8B93] flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-[#ED5642]" />
-                      <span>{pkg.duration}</span>
-                    </span>
+            {packages.map((pkg, idx) => {
+              const delayClass = `scroll-reveal-delay-${idx + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} p-7 rounded-3xl border flex flex-col justify-between transition-all duration-500 card-hover hover:-translate-y-3 hover:shadow-2xl group ${
+                    pkg.popular
+                      ? 'bg-white border-[#ED5642] shadow-md hover:border-[#ED5642]'
+                      : 'bg-[#F7F7F8] hover:bg-white border-[#EAEAEB] hover:border-[#ED5642]/50'
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#ED5642] px-3 py-1 rounded-full shadow-xs group-hover:scale-105 transition-transform">
+                        {pkg.tag}
+                      </span>
+                      <span className="text-xs text-[#8B8B93] flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-[#ED5642]" />
+                        <span>{pkg.duration}</span>
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-[#1E1E24] mb-2 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
+                      {pkg.title}
+                    </h3>
+
+                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
+                      {pkg.desc}
+                    </p>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#1E1E24] mb-2 leading-snug">
-                    {pkg.title}
-                  </h3>
-
-                  <p className="text-xs text-[#5A5A63] leading-relaxed mb-6">
-                    {pkg.desc}
-                  </p>
+                  <div className="pt-4 border-t border-[#EAEAEB]">
+                    <div className="text-xl font-extrabold text-[#1E1E24] mb-4 group-hover:text-[#ED5642] transition-colors">{pkg.price}</div>
+                    <button
+                      onClick={() => onSelectService({ title: pkg.title, price: pkg.price })}
+                      className="w-full skinenvy-btn-dark rounded-full text-xs py-2.5 text-center cursor-pointer hover:bg-[#ED5642] hover:border-[#ED5642] hover:shadow-lg transition-all duration-300"
+                    >
+                      Book Treatment
+                    </button>
+                  </div>
                 </div>
-
-                <div className="pt-4 border-t border-[#EAEAEB]">
-                  <div className="text-xl font-extrabold text-[#1E1E24] mb-4">{pkg.price}</div>
-                  <button
-                    onClick={() => onSelectService({ title: pkg.title, price: pkg.price })}
-                    className="w-full skinenvy-btn-dark text-xs py-2.5 text-center cursor-pointer"
-                  >
-                    Book Treatment
-                  </button>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

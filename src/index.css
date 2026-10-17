@@ -150,20 +150,32 @@ h1, h2, h3, h4, h5, h6 {
 .card-hover {
   border-radius: 1.25rem;
   border: 1px solid #EAEAEB;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background-color 0.35s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-6px);
-  border-color: rgba(237, 86, 66, 0.35);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  border-color: rgba(237, 86, 66, 0.45);
+  box-shadow: 0 24px 45px -12px rgba(237, 86, 66, 0.14), 0 12px 24px -8px rgba(0, 0, 0, 0.05);
+}
+
+/* Luxury Card Hover Variant with Coral Glow */
+.luxury-card-hover {
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-7px) scale(1.01);
+  box-shadow: 0 25px 50px -12px rgba(237, 86, 66, 0.18);
+  border-color: #ED5642;
 }
 
 /* Scroll-reveal animation system */
 .scroll-reveal {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .scroll-reveal.is-visible {
@@ -171,10 +183,113 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-.scroll-reveal-delay-1 { transition-delay: 0.1s; }
-.scroll-reveal-delay-2 { transition-delay: 0.2s; }
-.scroll-reveal-delay-3 { transition-delay: 0.3s; }
-.scroll-reveal-delay-4 { transition-delay: 0.4s; }
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-reveal-fade {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.scroll-reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* Stagger Delays */
+.scroll-reveal-delay-1, .delay-100 { transition-delay: 0.1s; }
+.scroll-reveal-delay-2, .delay-200 { transition-delay: 0.2s; }
+.scroll-reveal-delay-3, .delay-300 { transition-delay: 0.3s; }
+.scroll-reveal-delay-4, .delay-400 { transition-delay: 0.4s; }
+.scroll-reveal-delay-5, .delay-500 { transition-delay: 0.5s; }
+.scroll-reveal-delay-6, .delay-600 { transition-delay: 0.6s; }
+
+/* Section Specific Keyframes & Effects */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlowCoral {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(237, 86, 66, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(237, 86, 66, 0);
+  }
+}
+
+.animate-pulse-coral {
+  animation: pulseGlowCoral 2.8s infinite;
+}
+
+@keyframes bounceSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2.5s ease-in-out infinite;
+}
+
+/* Interactive Navigation Underline Effect */
+.nav-link-hover {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ED5642;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 9999px;
+}
+
+.nav-link-hover:hover::after {
+  width: 100%;
+}
 
 /* Continuous Marquee Scrolling Ticker */
 @keyframes najlaMarquee {

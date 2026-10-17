@@ -22,7 +22,7 @@ export default function SkinEnvyFooter({ onOpenBooking }) {
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-16 sm:pb-20 border-b border-[#EAEAEB]">
           {/* Left Column: Logo, description, and newsletter */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          <div className="lg:col-span-5 flex flex-col justify-between scroll-reveal-left">
             <div>
               <div className="flex items-center gap-2.5 mb-5">
                 <span className="w-9 h-9 rounded-xl bg-[#ED5642] flex items-center justify-center text-white font-extrabold text-base shadow-sm">
@@ -78,7 +78,7 @@ export default function SkinEnvyFooter({ onOpenBooking }) {
           </div>
 
           {/* Right Columns: 3 Navigation Link Directories */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 lg:gap-8">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 scroll-reveal-right delay-100">
             {/* Karachi Branches */}
             <div>
               <h5 className="font-bold text-[#1E1E24] text-base mb-4 sm:mb-5">9 Karachi Branches</h5>

@@ -121,7 +121,7 @@ export default function SessionsPage({ onOpenBooking, onSelectService }) {
       {/* Extended Specialized Sessions Catalog */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               SPECIALIZED THERAPIES
             </span>
@@ -131,60 +131,63 @@ export default function SessionsPage({ onOpenBooking, onSelectService }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4 xl:gap-6 items-stretch">
-            {specializedSessions.map((session) => (
-              <div
-                key={session.id}
-                className="bg-[#F7F7F8] border border-[#EAEAEB] p-5 lg:p-4 xl:p-6 flex flex-col justify-between card-hover"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4 gap-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-white px-2.5 py-1 border border-[#EAEAEB] rounded-full">
-                      {session.tag}
-                    </span>
-                    <span className="text-xs font-bold text-[#5A5A63] flex items-center gap-1 flex-shrink-0">
-                      <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
-                      <span>{session.duration}</span>
-                    </span>
-                  </div>
+            {specializedSessions.map((session, idx) => {
+              const delayClass = `scroll-reveal-delay-${idx + 1}`
+              return (
+                <div
+                  key={session.id}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-2xl p-5 lg:p-4 xl:p-6 flex flex-col justify-between card-hover hover:-translate-y-2.5 hover:shadow-2xl transition-all duration-500 group`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4 gap-2">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-white px-3 py-1 border border-[#EAEAEB] rounded-full shadow-2xs group-hover:border-[#ED5642]/30 transition-colors">
+                        {session.tag}
+                      </span>
+                      <span className="text-xs font-bold text-[#5A5A63] flex items-center gap-1 flex-shrink-0">
+                        <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
+                        <span>{session.duration}</span>
+                      </span>
+                    </div>
 
-                  <h3 className="text-lg xl:text-xl font-bold text-[#1E1E24] mb-2.5 leading-snug">
-                    {session.title}
-                  </h3>
+                    <h3 className="text-lg xl:text-xl font-bold text-[#1E1E24] mb-2.5 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
+                      {session.title}
+                    </h3>
 
-                  <p className="text-xs xl:text-sm text-[#5A5A63] leading-relaxed mb-5">
-                    {session.desc}
-                  </p>
+                    <p className="text-xs xl:text-sm text-[#5A5A63] leading-relaxed mb-5 group-hover:text-[#1E1E24] transition-colors duration-300">
+                      {session.desc}
+                    </p>
 
-                  <div className="mb-6 p-3.5 bg-white border border-[#EAEAEB]">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#1E1E24] block mb-2">
-                      Session Includes:
-                    </span>
-                    <div className="flex flex-col gap-1.5 text-xs text-[#5A5A63]">
-                      {session.includes.map((inc, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <Check className="w-3.5 h-3.5 text-[#ED5642] flex-shrink-0 mt-0.5" />
-                          <span className="leading-tight">{inc}</span>
-                        </div>
-                      ))}
+                    <div className="mb-6 p-3.5 bg-white group-hover:bg-[#FDF6F4] border border-[#EAEAEB] group-hover:border-[#ED5642]/20 rounded-xl transition-colors duration-300">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#1E1E24] block mb-2">
+                        Session Includes:
+                      </span>
+                      <div className="flex flex-col gap-1.5 text-xs text-[#5A5A63]">
+                        {session.includes.map((inc, i) => (
+                          <div key={i} className="flex items-start gap-2">
+                            <Check className="w-3.5 h-3.5 text-[#ED5642] flex-shrink-0 mt-0.5 group-hover:scale-120 transition-transform" />
+                            <span className="leading-tight group-hover:text-[#1E1E24] transition-colors">{inc}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="pt-5 border-t border-[#EAEAEB] flex flex-row items-center justify-between gap-2">
-                  <div className="flex-shrink-0">
-                    <span className="text-[10px] uppercase text-[#8B8B93] block">Investment</span>
-                    <span className="text-base sm:text-lg xl:text-xl font-extrabold text-[#1E1E24]">{session.price}</span>
+                  <div className="pt-5 border-t border-[#EAEAEB] flex flex-row items-center justify-between gap-2">
+                    <div className="flex-shrink-0">
+                      <span className="text-[10px] uppercase text-[#8B8B93] block font-semibold">Investment</span>
+                      <span className="text-base sm:text-lg xl:text-xl font-extrabold text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">{session.price}</span>
+                    </div>
+
+                    <button
+                      onClick={() => onSelectService({ title: session.title, price: session.price })}
+                      className="skinenvy-btn-primary rounded-full text-xs py-2 px-3.5 sm:px-4 cursor-pointer flex-shrink-0 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                      Reserve Session
+                    </button>
                   </div>
-
-                  <button
-                    onClick={() => onSelectService({ title: session.title, price: session.price })}
-                    className="skinenvy-btn-primary rounded-full text-xs py-2 px-3.5 sm:px-4 cursor-pointer flex-shrink-0 text-center"
-                  >
-                    Reserve Session
-                  </button>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -192,7 +195,7 @@ export default function SessionsPage({ onOpenBooking, onSelectService }) {
       {/* The Najla's Session Workflow */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               THE VIP EXPERIENCE
             </span>
@@ -202,15 +205,21 @@ export default function SessionsPage({ onOpenBooking, onSelectService }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workflow.map((w, idx) => (
-              <div key={idx} className="bg-white p-8 border border-[#EAEAEB] flex flex-col justify-between">
-                <div>
-                  <span className="text-3xl font-extrabold text-[#ED5642] block mb-4">{w.step}</span>
-                  <h4 className="text-lg font-bold text-[#1E1E24] mb-2">{w.title}</h4>
-                  <p className="text-xs text-[#5A5A63] leading-relaxed">{w.desc}</p>
+            {workflow.map((w, idx) => {
+              const delayClass = `scroll-reveal-delay-${idx + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} bg-white hover:bg-[#FDF6F4] p-8 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-xl transition-all duration-500 group cursor-default`}
+                >
+                  <div>
+                    <span className="text-3xl font-extrabold text-[#ED5642] block mb-4 group-hover:scale-115 transition-transform">{w.step}</span>
+                    <h4 className="text-lg font-bold text-[#1E1E24] mb-2 group-hover:text-[#ED5642] transition-colors duration-300">{w.title}</h4>
+                    <p className="text-xs text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{w.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

@@ -27,28 +27,46 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState(null)
   const location = useLocation()
 
-  // Global Scroll-Reveal Animation Observer
+  // Global Scroll-Reveal Animation Observer with robust multi-variant support
   useEffect(() => {
+    const selector =
+      '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-fade'
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible')
+            // Once visible, keep it visible
+            observer.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
     )
 
-    const timer = setTimeout(() => {
-      const elements = document.querySelectorAll('.scroll-reveal')
-      elements.forEach((el) => observer.observe(el))
-    }, 100)
+    const observeElements = () => {
+      const elements = document.querySelectorAll(selector)
+      elements.forEach((el) => {
+        // If element is already in viewport, make it visible immediately
+        const rect = el.getBoundingClientRect()
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('is-visible')
+        } else {
+          observer.observe(el)
+        }
+      })
+    }
+
+    // Run immediately and after paint
+    observeElements()
+    const timer1 = setTimeout(observeElements, 100)
+    const timer2 = setTimeout(observeElements, 350)
 
     return () => {
-      clearTimeout(timer)
-      const elements = document.querySelectorAll('.scroll-reveal')
-      elements.forEach((el) => observer.unobserve(el))
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+      observer.disconnect()
     }
   }, [location.pathname])
 

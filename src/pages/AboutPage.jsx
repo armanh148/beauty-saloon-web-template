@@ -66,7 +66,7 @@ export default function AboutPage({ onOpenBooking }) {
       {/* 4 Pillars of Excellence */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               THE NAJLA’S DISTINCTION
             </span>
@@ -78,17 +78,18 @@ export default function AboutPage({ onOpenBooking }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((item, idx) => {
               const Icon = item.icon
+              const delayClass = `scroll-reveal-delay-${idx + 1}`
               return (
                 <div
                   key={idx}
-                  className="bg-[#F7F7F8] p-8 border border-[#EAEAEB] flex flex-col justify-between card-hover"
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white p-8 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2.5 hover:shadow-2xl transition-all duration-500 group cursor-default`}
                 >
                   <div>
-                    <div className="w-12 h-12 bg-white text-[#ED5642] flex items-center justify-center border border-[#EAEAEB] mb-6">
+                    <div className="w-12 h-12 bg-white text-[#ED5642] flex items-center justify-center rounded-xl border border-[#EAEAEB] mb-6 shadow-xs group-hover:bg-[#ED5642] group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1E1E24] mb-3">{item.title}</h3>
-                    <p className="text-sm text-[#5A5A63] leading-relaxed">{item.desc}</p>
+                    <h3 className="text-xl font-bold text-[#1E1E24] mb-3 group-hover:text-[#ED5642] transition-colors duration-300">{item.title}</h3>
+                    <p className="text-sm text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{item.desc}</p>
                   </div>
                 </div>
               )
@@ -98,18 +99,18 @@ export default function AboutPage({ onOpenBooking }) {
       </section>
 
       {/* Sindh Board Beautician Training Institute Spotlight */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
+      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white overflow-hidden">
         <div className="w-full px-6 sm:px-10 lg:px-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 overflow-hidden border border-[#EAEAEB] aspect-[4/3] bg-white">
+            <div className="lg:col-span-6 overflow-hidden rounded-3xl border border-[#EAEAEB] group aspect-[4/3] bg-white shadow-md hover:shadow-2xl hover:border-[#ED5642]/40 transition-all duration-500 scroll-reveal-left">
               <img
                 src="https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b75c_Team%20image.jpg"
                 alt="Sindh Board Institute Students"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105"
               />
             </div>
 
-            <div className="lg:col-span-6 flex flex-col justify-center">
+            <div className="lg:col-span-6 flex flex-col justify-center scroll-reveal-right delay-200">
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-3">
                 <BookOpen className="w-4 h-4" />
                 <span>GOVERNMENT ACCREDITED TRAINING</span>
@@ -122,21 +123,21 @@ export default function AboutPage({ onOpenBooking }) {
               </p>
 
               <div className="flex flex-col gap-3.5 mb-10 text-sm font-semibold text-[#1E1E24]">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642]" />
-                  <span>3-Month Professional Cosmetology & Hair Design Diploma</span>
+                <div className="flex items-center gap-3 group cursor-default">
+                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                  <span className="group-hover:text-[#ED5642] transition-colors">3-Month Professional Cosmetology & Hair Design Diploma</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642]" />
-                  <span>6-Month Comprehensive Master Cosmetology & Salon Management</span>
+                <div className="flex items-center gap-3 group cursor-default">
+                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                  <span className="group-hover:text-[#ED5642] transition-colors">6-Month Comprehensive Master Cosmetology & Salon Management</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642]" />
-                  <span>100% Practical hands-on training on real salon clients</span>
+                <div className="flex items-center gap-3 group cursor-default">
+                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                  <span className="group-hover:text-[#ED5642] transition-colors">100% Practical hands-on training on real salon clients</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642]" />
-                  <span>Government recognized certification accepted globally</span>
+                <div className="flex items-center gap-3 group cursor-default">
+                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                  <span className="group-hover:text-[#ED5642] transition-colors">Government recognized certification accepted globally</span>
                 </div>
               </div>
 
@@ -144,10 +145,10 @@ export default function AboutPage({ onOpenBooking }) {
                 href="https://wa.me/923341430303?text=Hi%20Najla's,%20I%20would%20like%20information%20on%20Institute%20courses"
                 target="_blank"
                 rel="noreferrer"
-                className="skinenvy-btn-primary flex items-center gap-2 group w-fit"
+                className="skinenvy-btn-primary flex items-center gap-2 group w-fit rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <span>Inquire About Course Admissions</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </a>
             </div>
           </div>
@@ -157,7 +158,7 @@ export default function AboutPage({ onOpenBooking }) {
       {/* 25-Year Heritage Timeline */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               OUR HISTORIC JOURNEY
             </span>
@@ -167,15 +168,21 @@ export default function AboutPage({ onOpenBooking }) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {milestones.map((m, idx) => (
-              <div key={idx} className="border-t-2 border-[#ED5642] pt-6 flex flex-col justify-between">
-                <div>
-                  <span className="text-2xl font-extrabold text-[#ED5642] block mb-2">{m.year}</span>
-                  <h4 className="text-base font-bold text-[#1E1E24] mb-2">{m.title}</h4>
-                  <p className="text-xs text-[#5A5A63] leading-relaxed">{m.desc}</p>
+            {milestones.map((m, idx) => {
+              const delayClass = `scroll-reveal-delay-${idx + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} border-t-2 border-[#ED5642] pt-6 flex flex-col justify-between group p-4 rounded-xl hover:bg-[#FDF6F4] transition-all duration-400 hover:-translate-y-2 cursor-default`}
+                >
+                  <div>
+                    <span className="text-2xl font-extrabold text-[#ED5642] block mb-2 group-hover:scale-110 transition-transform">{m.year}</span>
+                    <h4 className="text-base font-bold text-[#1E1E24] mb-2 group-hover:text-[#ED5642] transition-colors">{m.title}</h4>
+                    <p className="text-xs text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors">{m.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

@@ -70,7 +70,7 @@ export default function TeamPage({ onOpenBooking }) {
       {/* Senior Master Faculty Detailed Profiles */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16">
+          <div className="max-w-2xl mb-16 scroll-reveal">
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
               FACULTY PROFILES
             </span>
@@ -80,58 +80,62 @@ export default function TeamPage({ onOpenBooking }) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4 xl:gap-6 items-stretch">
-            {masterFaculty.map((member, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F7F7F8] border border-[#EAEAEB] p-5 lg:p-4 xl:p-6 flex flex-col justify-between card-hover"
-              >
-                <div>
-                  <div className="flex items-start gap-3 mb-4">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] flex-shrink-0">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
-                      />
+            {masterFaculty.map((member, idx) => {
+              const delayClass = `scroll-reveal-delay-${idx + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 p-5 lg:p-4 xl:p-6 rounded-2xl flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group`}
+                >
+                  <div>
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] group-hover:border-[#ED5642] flex-shrink-0 shadow-2xs transition-colors duration-300">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top group-hover:scale-115 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-base xl:text-lg font-bold text-[#1E1E24] leading-tight group-hover:text-[#ED5642] transition-colors duration-300">
+                          {member.name}
+                        </h3>
+                        <span className="text-[11px] xl:text-xs font-semibold text-[#ED5642] block mt-0.5 leading-tight">
+                          {member.role}
+                        </span>
+                        <span className="text-[10px] text-[#8B8B93] block mt-1">
+                          {member.experience}
+                        </span>
+                      </div>
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-base xl:text-lg font-bold text-[#1E1E24] leading-tight">
-                        {member.name}
-                      </h3>
-                      <span className="text-[11px] xl:text-xs font-semibold text-[#ED5642] block mt-0.5 leading-tight">
-                        {member.role}
-                      </span>
-                      <span className="text-[10px] text-[#8B8B93] block mt-1">
-                        {member.experience}
-                      </span>
+
+                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-4 group-hover:text-[#1E1E24] transition-colors duration-300">
+                      {member.bio}
+                    </p>
+
+                    <div className="p-3 bg-white group-hover:bg-[#FDF6F4] border border-[#EAEAEB] group-hover:border-[#ED5642]/20 rounded-xl mb-5 text-xs transition-colors duration-300">
+                      <strong className="text-[#1E1E24] block mb-1 text-[11px]">Specialty:</strong>
+                      <span className="text-[#5A5A63] text-xs leading-snug block">{member.specialty}</span>
                     </div>
                   </div>
 
-                  <p className="text-xs text-[#5A5A63] leading-relaxed mb-4">
-                    {member.bio}
-                  </p>
+                  <div className="pt-4 border-t border-[#EAEAEB] flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start sm:items-center lg:items-start xl:items-center justify-between gap-2 text-xs">
+                    <span className="text-[#8B8B93] flex items-center gap-1 text-[11px] truncate">
+                      <MapPin className="w-3.5 h-3.5 text-[#ED5642] flex-shrink-0 group-hover:animate-bounce-subtle" />
+                      <span className="truncate">{member.branch}</span>
+                    </span>
 
-                  <div className="p-3 bg-white border border-[#EAEAEB] mb-5 text-xs">
-                    <strong className="text-[#1E1E24] block mb-1 text-[11px]">Specialty:</strong>
-                    <span className="text-[#5A5A63] text-xs leading-snug block">{member.specialty}</span>
+                    <button
+                      onClick={onOpenBooking}
+                      className="text-[#ED5642] font-bold hover:underline cursor-pointer text-xs flex-shrink-0 group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5"
+                    >
+                      <span>Request Appointment</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </button>
                   </div>
                 </div>
-
-                <div className="pt-4 border-t border-[#EAEAEB] flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start sm:items-center lg:items-start xl:items-center justify-between gap-2 text-xs">
-                  <span className="text-[#8B8B93] flex items-center gap-1 text-[11px] truncate">
-                    <MapPin className="w-3.5 h-3.5 text-[#ED5642] flex-shrink-0" />
-                    <span className="truncate">{member.branch}</span>
-                  </span>
-
-                  <button
-                    onClick={onOpenBooking}
-                    className="text-[#ED5642] font-bold hover:underline cursor-pointer text-xs flex-shrink-0"
-                  >
-                    Request Appointment →
-                  </button>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

@@ -133,7 +133,7 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
       {/* Detailed Service Price Catalog */}
       <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
         <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 scroll-reveal">
             <div className="max-w-xl">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
                 PRICING DIRECTORY
@@ -149,10 +149,10 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 text-xs font-bold transition-all cursor-pointer border ${
+                  className={`px-4 py-2 text-xs font-bold rounded-full transition-all duration-300 cursor-pointer border ${
                     activeCategory === cat
-                      ? 'bg-[#ED5642] text-white border-[#ED5642]'
-                      : 'bg-[#F7F7F8] text-[#5A5A63] hover:bg-[#EAEAEB] border-[#EAEAEB]'
+                      ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm scale-105'
+                      : 'bg-[#F7F7F8] text-[#5A5A63] hover:bg-[#EAEAEB] hover:text-[#1E1E24] border-[#EAEAEB] hover:-translate-y-0.5'
                   }`}
                 >
                   {cat}
@@ -163,42 +163,45 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
 
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F7F7F8] p-7 border border-[#EAEAEB] flex flex-col justify-between card-hover"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-white px-2.5 py-0.5 border border-[#EAEAEB]">
-                      {item.category}
-                    </span>
-                    <span className="text-xs text-[#8B8B93] flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
-                      <span>{item.duration}</span>
-                    </span>
+            {filtered.map((item, idx) => {
+              const delayClass = `scroll-reveal-delay-${(idx % 6) + 1}`
+              return (
+                <div
+                  key={idx}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white p-7 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-white px-3 py-1 rounded-full border border-[#EAEAEB] shadow-2xs group-hover:border-[#ED5642]/30 transition-colors">
+                        {item.category}
+                      </span>
+                      <span className="text-xs text-[#8B8B93] flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
+                        <span>{item.duration}</span>
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-[#1E1E24] mb-2 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
+                      {item.desc}
+                    </p>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#1E1E24] mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs text-[#5A5A63] leading-relaxed mb-6">
-                    {item.desc}
-                  </p>
+                  <div className="pt-4 border-t border-[#EAEAEB] flex items-center justify-between">
+                    <span className="text-lg font-extrabold text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">{item.price}</span>
+                    <button
+                      onClick={() => onSelectService({ title: item.title, price: item.price })}
+                      className="skinenvy-btn-dark rounded-full text-xs py-2 px-5 cursor-pointer hover:bg-[#ED5642] hover:border-[#ED5642] hover:shadow-md transition-all duration-300"
+                    >
+                      Book Now
+                    </button>
+                  </div>
                 </div>
-
-                <div className="pt-4 border-t border-[#EAEAEB] flex items-center justify-between">
-                  <span className="text-lg font-extrabold text-[#1E1E24]">{item.price}</span>
-                  <button
-                    onClick={() => onSelectService({ title: item.title, price: item.price })}
-                    className="skinenvy-btn-dark text-xs py-2 px-4 cursor-pointer"
-                  >
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
