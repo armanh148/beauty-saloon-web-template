@@ -205,8 +205,8 @@ export default function NajlaNavbar({
           </div>
         </div>
 
-        {/* ================= TIER 2: DATE & STATUS PILL + HORIZONTAL CATEGORIES ================= */}
-        <div className="w-full px-4 sm:px-10 lg:px-14 py-2 sm:py-2.5 border-b border-[#EAEAEB] bg-white flex items-center justify-between gap-3 sm:gap-6 overflow-x-auto no-scrollbar touch-momentum">
+        {/* ================= TIER 2: DATE & STATUS PILL + HORIZONTAL CATEGORIES (DESKTOP ONLY) ================= */}
+        <div className="hidden lg:flex w-full px-6 sm:px-10 lg:px-14 py-2 sm:py-2.5 border-b border-[#EAEAEB] bg-white items-center justify-between gap-3 sm:gap-6 overflow-x-auto no-scrollbar">
           {/* Left: Weather/Status Pill + Date Indicator */}
           <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
             {/* Orange/Coral Pill */}
