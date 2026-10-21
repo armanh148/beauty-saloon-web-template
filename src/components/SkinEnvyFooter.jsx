@@ -78,10 +78,10 @@ export default function SkinEnvyFooter({ onOpenBooking }) {
           </div>
 
           {/* Right Columns: 3 Navigation Link Directories */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 lg:gap-8 scroll-reveal-right delay-100">
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 scroll-reveal-right delay-100">
             {/* Karachi Branches */}
-            <div>
-              <h5 className="font-bold text-[#1E1E24] text-base mb-4 sm:mb-5">9 Karachi Branches</h5>
+            <div className="col-span-1">
+              <h5 className="font-bold text-[#1E1E24] text-sm sm:text-base mb-3 sm:mb-5">9 Karachi Branches</h5>
               <div className="flex flex-col gap-2 sm:gap-2.5 text-xs sm:text-sm text-[#5A5A63]">
                 <a href="https://wa.me/923341430303?text=Hi%20Najla's,%20I%20would%20like%20to%20visit%20Tariq%20Road%20branch" target="_blank" rel="noreferrer" className="hover:text-[#ED5642] hover:translate-x-1 transition-all">Tariq Road (PECHS)</a>
                 <a href="https://wa.me/923362542923?text=Hi%20Najla's,%20I%20would%20like%20to%20visit%20Gulshan%20KDA%20branch" target="_blank" rel="noreferrer" className="hover:text-[#ED5642] hover:translate-x-1 transition-all">Gulshan KDA Block 3</a>
@@ -96,8 +96,8 @@ export default function SkinEnvyFooter({ onOpenBooking }) {
             </div>
 
             {/* Core Services & Navigation Links */}
-            <div>
-              <h5 className="font-bold text-[#1E1E24] text-base mb-4 sm:mb-5">Website Pages</h5>
+            <div className="col-span-1">
+              <h5 className="font-bold text-[#1E1E24] text-sm sm:text-base mb-3 sm:mb-5">Website Pages</h5>
               <div className="flex flex-col gap-2 sm:gap-2.5 text-xs sm:text-sm text-[#5A5A63]">
                 <Link to="/about" className="hover:text-[#ED5642] hover:translate-x-1 transition-all">About Najla’s</Link>
                 <Link to="/sessions" className="hover:text-[#ED5642] hover:translate-x-1 transition-all">Therapeutic Sessions</Link>
@@ -112,8 +112,8 @@ export default function SkinEnvyFooter({ onOpenBooking }) {
             </div>
 
             {/* Contact & Concierge */}
-            <div>
-              <h5 className="font-bold text-[#1E1E24] text-base mb-4 sm:mb-5">Direct Concierge</h5>
+            <div className="col-span-2 md:col-span-1 pt-4 md:pt-0 border-t md:border-t-0 border-[#EAEAEB]">
+              <h5 className="font-bold text-[#1E1E24] text-sm sm:text-base mb-3 sm:mb-5">Direct Concierge</h5>
               <div className="flex flex-col gap-2.5 sm:gap-3 text-xs sm:text-sm text-[#5A5A63]">
                 <a href="https://wa.me/923341430303" target="_blank" rel="noreferrer" className="text-[#1EBE5D] font-bold hover:underline flex items-center gap-1">
                   WhatsApp: 0334-1430303

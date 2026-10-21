@@ -79,18 +79,23 @@ export default function NajlaNavbar({
         }`}
       >
         {/* ================= TIER 1: TOP BRAND, SEARCH BAR & ACTIONS ================= */}
-        <div className="w-full px-6 sm:px-10 lg:px-14 py-3.5 border-b border-[#EAEAEB] flex items-center justify-between gap-4 sm:gap-8">
-          {/* Left: Brand Logo in Editorial Lowercase Style matching reference */}
-          <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
-            <span className="w-8 h-8 rounded-lg bg-[#ED5642] flex items-center justify-center text-white font-extrabold text-sm shadow-xs transition-transform duration-300 group-hover:scale-105">
+        <div className="w-full px-4 sm:px-10 lg:px-14 py-2.5 sm:py-3.5 border-b border-[#EAEAEB] flex items-center justify-between gap-3 sm:gap-8">
+          {/* Left: Brand Logo in Editorial Lowercase Style */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group flex-shrink-0 touch-feedback">
+            <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#ED5642] to-[#ff7b69] flex items-center justify-center text-white font-extrabold text-sm shadow-xs transition-transform duration-300 group-hover:scale-105">
               N
             </span>
-            <span className="text-xl sm:text-2xl font-bold tracking-tight text-[#1E1E24] lowercase font-sans">
-              najlas<span className="text-[#ED5642]">clinic</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-lg sm:text-2xl font-bold tracking-tight text-[#1E1E24] lowercase font-sans leading-none">
+                najlas<span className="text-[#ED5642]">clinic</span>
+              </span>
+              <span className="text-[9px] uppercase tracking-[0.18em] text-[#8B8B93] font-semibold sm:hidden mt-0.5">
+                Beauty & Institute
+              </span>
+            </div>
           </Link>
 
-          {/* Center: Search Bar matching reference image */}
+          {/* Center: Search Bar (Desktop) */}
           <div className="relative flex-1 max-w-md hidden md:block">
             <form onSubmit={handleSearchSubmit} className="relative">
               <input
@@ -133,9 +138,9 @@ export default function NajlaNavbar({
             )}
           </div>
 
-          {/* Right: Branch Selector, Cart, Sign In & Primary Action Button */}
-          <div className="flex items-center gap-3 sm:gap-6 flex-shrink-0">
-            {/* Branch Selector Dropdown */}
+          {/* Right: Actions */}
+          <div className="flex items-center gap-2 sm:gap-6 flex-shrink-0">
+            {/* Desktop Branch Selector Dropdown */}
             <div className="relative hidden xl:flex items-center gap-1.5 text-xs text-[#5A5A63] bg-[#F7F7F8] px-3 py-1.5 rounded-full border border-[#EAEAEB]">
               <MapPin className="w-3.5 h-3.5 text-[#ED5642]" />
               <select
@@ -151,78 +156,82 @@ export default function NajlaNavbar({
               </select>
             </div>
 
-            {/* Text Link (Helpline / Sign In) */}
-            <a
-              href="https://wa.me/923341430303"
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs font-bold uppercase tracking-wider text-[#1E1E24] hover:text-[#ED5642] transition-colors hidden sm:inline"
+            {/* Mobile Branch Quick Pill (clickable to open menu) */}
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="xl:hidden flex items-center gap-1 text-[11px] font-semibold text-[#5A5A63] bg-[#F7F7F8] px-2.5 py-1 rounded-full border border-[#EAEAEB] touch-feedback"
             >
-              SIGN IN
-            </a>
+              <MapPin className="w-3 h-3 text-[#ED5642]" />
+              <span className="truncate max-w-[85px] sm:max-w-[130px]">
+                {selectedBranch.split(' ')[0]}
+              </span>
+              <ChevronDown className="w-3 h-3 text-[#8B8B93]" />
+            </button>
 
             {/* Cart Trigger */}
             <button
               onClick={onOpenCart}
-              className="relative flex items-center gap-1.5 p-2 text-[#1E1E24] hover:text-[#ED5642] rounded-full hover:bg-[#F7F7F8] transition-colors cursor-pointer"
+              className="relative flex items-center gap-1.5 p-2 text-[#1E1E24] hover:text-[#ED5642] rounded-full hover:bg-[#F7F7F8] transition-colors cursor-pointer touch-feedback"
               aria-label="View Cart"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span className="bg-[#ED5642] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                {cartCount}
-              </span>
+              <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+              {cartCount > 0 && (
+                <span className="bg-[#ED5642] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-xs">
+                  {cartCount}
+                </span>
+              )}
             </button>
 
-            {/* Main Action Button matching reference "SUBSCRIBE" button */}
+            {/* Main Action Button (Desktop "SUBSCRIBE" / Booking) */}
             <button
               onClick={onOpenBooking}
-              className="bg-[#1E1E24] hover:bg-[#ED5642] text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 cursor-pointer shadow-xs"
+              className="hidden sm:inline-flex bg-[#1E1E24] hover:bg-[#ED5642] text-white text-xs font-bold uppercase tracking-wider px-5 sm:px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 cursor-pointer shadow-xs"
             >
               SUBSCRIBE
             </button>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden w-9 h-9 bg-[#F7F7F8] hover:bg-[#EAEAEB] text-[#1E1E24] flex items-center justify-center border border-[#EAEAEB] rounded-full cursor-pointer transition-colors"
+              className="lg:hidden w-9 h-9 bg-[#F7F7F8] hover:bg-[#EAEAEB] active:scale-95 text-[#1E1E24] flex items-center justify-center border border-[#EAEAEB] rounded-full cursor-pointer transition-all shadow-xs"
               aria-label="Toggle Navigation"
             >
               <span className="flex flex-col gap-1 w-4">
-                <span className="h-[2px] bg-current w-full" />
-                <span className="h-[2px] bg-current w-3/4" />
-                <span className="h-[2px] bg-current w-full" />
+                <span className="h-[2px] bg-current w-full rounded-full" />
+                <span className="h-[2px] bg-[#ED5642] w-3/4 rounded-full" />
+                <span className="h-[2px] bg-current w-full rounded-full" />
               </span>
             </button>
           </div>
         </div>
 
         {/* ================= TIER 2: DATE & STATUS PILL + HORIZONTAL CATEGORIES ================= */}
-        <div className="w-full px-6 sm:px-10 lg:px-14 py-2.5 border-b border-[#EAEAEB] bg-white flex items-center justify-between gap-6 overflow-x-auto no-scrollbar">
-          {/* Left: Weather/Status Pill + Date Indicator strictly matching screenshot */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+        <div className="w-full px-4 sm:px-10 lg:px-14 py-2 sm:py-2.5 border-b border-[#EAEAEB] bg-white flex items-center justify-between gap-3 sm:gap-6 overflow-x-auto no-scrollbar touch-momentum">
+          {/* Left: Weather/Status Pill + Date Indicator */}
+          <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
             {/* Orange/Coral Pill */}
-            <div className="bg-[#ED5642] text-white px-3.5 py-1 text-xs font-bold rounded-full flex items-center gap-1 shadow-2xs">
+            <div className="bg-[#ED5642] text-white px-2.5 sm:px-3.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-bold rounded-full flex items-center gap-1 shadow-2xs">
               <span>28°C</span>
             </div>
 
-            {/* Day and Date display matching reference */}
-            <div className="flex flex-col leading-tight text-[11px] text-[#5A5A63]">
+            {/* Day and Date display */}
+            <div className="flex flex-col leading-tight text-[10px] sm:text-[11px] text-[#5A5A63]">
               <span className="font-bold text-[#1E1E24]">{dayName}</span>
-              <span className="text-[10px] text-[#8B8B93] italic">
+              <span className="text-[9px] sm:text-[10px] text-[#8B8B93] italic">
                 {dateNum}th {monthName} {yearNum}
               </span>
             </div>
           </div>
 
           {/* Right / Center: Horizontal Navigation Links with active indicator dot */}
-          <nav className="flex items-center gap-6 sm:gap-8 flex-shrink-0">
+          <nav className="flex items-center gap-4 sm:gap-8 flex-shrink-0">
             {navLinks.map((item) => {
               const isActive = location.pathname === item.path
               return (
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`relative text-xs sm:text-[13px] transition-colors py-1 flex flex-col items-center ${
+                  className={`relative text-xs sm:text-[13px] transition-colors py-1 flex flex-col items-center whitespace-nowrap touch-feedback ${
                     isActive
                       ? 'font-bold text-[#1E1E24]'
                       : 'font-medium text-[#5A5A63] hover:text-[#1E1E24]'
@@ -231,7 +240,7 @@ export default function NajlaNavbar({
                   <span>{item.label}</span>
                   {/* Active Indicator Dot matching reference screenshot */}
                   {isActive && (
-                    <span className="w-1.5 h-1.5 bg-[#1E1E24] rounded-full mt-0.5 block" />
+                    <span className="w-1.5 h-1.5 bg-[#ED5642] rounded-full mt-0.5 block" />
                   )}
                 </Link>
               )
@@ -240,89 +249,126 @@ export default function NajlaNavbar({
         </div>
       </header>
 
-      {/* ================= FULLSCREEN MOBILE OVERLAY MENU ================= */}
+      {/* ================= LUXURY SLIDE-IN MOBILE DRAWER ================= */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-white text-[#1E1E24] flex flex-col justify-between p-8 sm:p-14 animate-fade-in overflow-y-auto">
-          {/* Menu Top Bar */}
-          <div className="w-full flex items-center justify-between">
-            <Link
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-3"
-            >
-              <span className="w-10 h-10 rounded-xl bg-[#ED5642] flex items-center justify-center text-white font-extrabold text-base shadow-sm">
-                N
-              </span>
-              <div>
-                <span className="text-2xl font-bold tracking-tight text-[#1E1E24] block">
-                  Najla’s <span className="text-[#ED5642]">Clinic</span>
+        <div className="fixed inset-0 z-50 flex justify-end">
+          {/* Dimmed Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity animate-fade-in"
+            onClick={() => setMenuOpen(false)}
+          />
+
+          {/* Drawer Container */}
+          <div className="relative w-full max-w-sm sm:max-w-md h-full bg-white text-[#1E1E24] flex flex-col justify-between p-6 sm:p-8 z-10 shadow-2xl overflow-y-auto animate-fade-in touch-momentum">
+            {/* Top Bar */}
+            <div className="w-full flex items-center justify-between pb-4 border-b border-[#EAEAEB]">
+              <Link
+                to="/"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2.5"
+              >
+                <span className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#ED5642] to-[#ff7b69] flex items-center justify-center text-white font-extrabold text-sm shadow-sm">
+                  N
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#8B8B93] font-bold">
-                  Beauty & Institute Karachi
+                <div>
+                  <span className="text-xl font-bold tracking-tight text-[#1E1E24] block leading-tight">
+                    Najla’s <span className="text-[#ED5642]">Clinic</span>
+                  </span>
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-[#8B8B93] font-bold">
+                    Karachi Sanctuary & Institute
+                  </span>
+                </div>
+              </Link>
+
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="w-10 h-10 bg-[#F7F7F8] hover:bg-[#ED5642] text-[#1E1E24] hover:text-white flex items-center justify-center transition-all cursor-pointer border border-[#EAEAEB] rounded-full shadow-xs active:scale-95"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Branch Selector Card */}
+            <div className="my-4 p-3.5 bg-[#F7F7F8] rounded-2xl border border-[#EAEAEB]">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#8B8B93] flex items-center gap-1">
+                  <MapPin className="w-3 h-3 text-[#ED5642]" />
+                  Current Branch
+                </span>
+                <span className="text-[10px] font-bold text-[#1EBE5D] bg-[#1EBE5D]/10 px-2 py-0.5 rounded-full">
+                  Open Today 11am - 8pm
                 </span>
               </div>
-            </Link>
+              <select
+                value={selectedBranch}
+                onChange={(e) => onSelectBranch(e.target.value)}
+                className="w-full bg-white text-xs font-bold text-[#1E1E24] p-2.5 rounded-xl border border-[#EAEAEB] outline-none shadow-2xs"
+              >
+                {branches.map((b) => (
+                  <option key={b} value={b}>
+                    {b}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="w-11 h-11 bg-[#F7F7F8] hover:bg-[#ED5642] text-[#1E1E24] hover:text-white flex items-center justify-center transition-all cursor-pointer border border-[#EAEAEB] rounded-full shadow-xs hover:shadow-md"
-              aria-label="Close menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+            {/* Nav Links with Badges */}
+            <div className="py-2 flex-1">
+              <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#ED5642] block mb-3">
+                EXPLORE NAJLA’S
+              </span>
+              <nav className="flex flex-col gap-1 text-base sm:text-lg font-bold text-[#1E1E24]">
+                {navLinks.map((item) => {
+                  const isActive = location.pathname === item.path
+                  return (
+                    <Link
+                      key={item.label}
+                      to={item.path}
+                      onClick={() => setMenuOpen(false)}
+                      className={`flex items-center justify-between group py-2.5 px-3 rounded-xl transition-all ${
+                        isActive
+                          ? 'bg-[#ED5642]/10 text-[#ED5642]'
+                          : 'hover:bg-[#F7F7F8] text-[#1E1E24] hover:text-[#ED5642]'
+                      }`}
+                    >
+                      <span className="transition-transform duration-200 group-hover:translate-x-1.5">
+                        {item.label}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-[#ED5642] opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  )
+                })}
+              </nav>
+            </div>
 
-          {/* Menu Links */}
-          <div className="w-full my-auto py-10">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ED5642] block mb-6">
-              NAJLA’S PAGES
-            </span>
-            <nav className="flex flex-col gap-3.5 sm:gap-5 text-2xl sm:text-4xl font-bold text-[#1E1E24]">
-              {navLinks.map((item) => {
-                const isActive = location.pathname === item.path
-                return (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    onClick={() => setMenuOpen(false)}
-                    className={`flex items-center justify-between group py-1.5 border-b border-[#EAEAEB] transition-colors ${
-                      isActive ? 'text-[#ED5642]' : 'hover:text-[#ED5642]'
-                    }`}
-                  >
-                    <span className="transition-transform duration-300 group-hover:translate-x-3">
-                      {item.label}
-                    </span>
-                    <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-3 group-hover:translate-x-0 text-[#ED5642]" />
-                  </Link>
-                )
-              })}
-            </nav>
-          </div>
+            {/* Drawer Footer Actions */}
+            <div className="pt-4 border-t border-[#EAEAEB] flex flex-col gap-2.5">
+              <button
+                onClick={() => {
+                  setMenuOpen(false)
+                  onOpenBooking()
+                }}
+                className="w-full py-3 bg-gradient-to-r from-[#ED5642] to-[#D8432F] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md active:scale-98 transition-transform cursor-pointer flex items-center justify-center gap-2"
+              >
+                <span>Book an Appointment</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-          {/* Menu Footer */}
-          <div className="w-full pt-6 border-t border-[#EAEAEB] flex flex-col sm:flex-row items-center justify-between gap-6">
-            <a
-              href="https://wa.me/923341430303"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-[#1EBE5D] transition-colors flex items-center gap-1.5 font-bold text-xs text-[#1EBE5D]"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp Helpline: 0334-1430303</span>
-            </a>
-
-            <button
-              onClick={() => {
-                setMenuOpen(false)
-                onOpenBooking()
-              }}
-              className="skinenvy-btn-primary"
-            >
-              Book an Appointment
-            </button>
+              <a
+                href="https://wa.me/923341430303?text=Hi%20Najla’s,%20I%20have%20an%20inquiry%20regarding%20appointments%20and%20rates."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2.5 bg-[#1EBE5D]/10 hover:bg-[#1EBE5D]/20 text-[#1EBE5D] font-bold text-xs rounded-full border border-[#1EBE5D]/25 transition-colors flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp Helpline: 0334-1430303</span>
+              </a>
+            </div>
           </div>
         </div>
       )}
     </>
   )
 }
+

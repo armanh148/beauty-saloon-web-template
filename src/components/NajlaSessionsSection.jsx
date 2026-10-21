@@ -80,27 +80,27 @@ export default function NajlaSessionsSection({ onOpenBooking, onSelectService })
   }
 
   return (
-    <section id="sessions" className="w-full py-20 sm:py-28 bg-white border-b border-[#EAEAEB] overflow-hidden">
-      <div className="w-full px-6 sm:px-10 lg:px-14">
+    <section id="sessions" className="w-full py-12 sm:py-24 bg-white border-b border-[#EAEAEB] overflow-hidden">
+      <div className="w-full px-4 sm:px-10 lg:px-14">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 scroll-reveal">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-16 scroll-reveal">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-[#EAEAEB] rounded-full text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-3 shadow-2xs hover:border-[#ED5642] transition-colors duration-300">
+            <div className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1 sm:py-1.5 bg-white border border-[#EAEAEB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-2 sm:mb-3 shadow-2xs hover:border-[#ED5642] transition-colors duration-300">
               <span className="w-2 h-2 rounded-full bg-[#ED5642] animate-pulse" />
               EXCLUSIVE BEAUTY SESSIONS
             </div>
-            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+            <h2 className="text-2xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.15] sm:leading-[1.12] tracking-tight">
               Curated therapeutic & beauty sessions.
             </h2>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-between sm:justify-start gap-4">
             <span className="text-xs font-semibold text-[#5A5A63] hidden sm:inline">
               Available across all 9 Karachi Flagship branches
             </span>
             <button
               onClick={onOpenBooking}
-              className="skinenvy-btn-primary flex items-center gap-2 group text-xs py-2.5 px-6 shadow-sm rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="skinenvy-btn-primary flex items-center gap-2 group text-xs py-2 sm:py-2.5 px-5 sm:px-6 shadow-sm rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 touch-feedback"
             >
               <span>Book A Session</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -108,17 +108,17 @@ export default function NajlaSessionsSection({ onOpenBooking, onSelectService })
           </div>
         </div>
 
-        {/* 4 Identical, Unified Vertical Cards strictly matching the reference layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 items-stretch">
+        {/* 4 Cards (Horizontal Touch Swipe Carousel on Mobile, Grid on Tablet/Desktop) */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4 no-scrollbar touch-momentum sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:mx-0 sm:px-0 sm:overflow-visible items-stretch">
           {sessions.map((session, idx) => {
             const delayClass = `scroll-reveal-delay-${idx + 1}`
             return (
               <div
                 key={session.id}
                 onClick={() => handleCardClick(session)}
-                className={`scroll-reveal ${delayClass} group relative min-h-[540px] sm:min-h-[580px] lg:min-h-[610px] rounded-3xl border border-[#EAEAEB] hover:border-[#ED5642]/60 bg-white flex flex-col justify-between overflow-hidden cursor-pointer card-hover shadow-xs hover:shadow-2xl hover:-translate-y-3 transition-all duration-500`}
+                className={`scroll-reveal ${delayClass} group relative w-[82vw] max-w-[310px] flex-shrink-0 snap-center min-h-[460px] sm:w-auto sm:min-h-[580px] lg:min-h-[610px] sm:flex-shrink-1 rounded-3xl border border-[#EAEAEB] hover:border-[#ED5642]/60 bg-white flex flex-col justify-between overflow-hidden cursor-pointer card-hover shadow-xs hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 touch-feedback`}
               >
-                {/* Layer 1: Ethereal Atmospheric Background Photography with Dreamy Blur */}
+                {/* Layer 1: Ethereal Atmospheric Background Photography */}
                 <div className="absolute inset-0 overflow-hidden bg-[#F7F7F8]">
                   <img
                     src={session.bgImage}
@@ -132,27 +132,27 @@ export default function NajlaSessionsSection({ onOpenBooking, onSelectService })
                   className={`absolute inset-0 bg-gradient-to-b ${session.gradient} transition-opacity duration-500`}
                 />
 
-                {/* Layer 3: Vertical Prism Glass Refraction Scanline Effect (from the reference) */}
+                {/* Layer 3: Vertical Prism Glass Refraction Scanline Effect */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.45)_1px,transparent_1px)] bg-[size:36px_100%] opacity-40 pointer-events-none" />
 
                 {/* Layer 4: Top Row with Category Badge & Price Pill */}
-                <div className="relative z-10 p-6 sm:p-7 flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#ED5642] bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#EAEAEB] shadow-xs group-hover:border-[#ED5642]/40 transition-colors">
+                <div className="relative z-10 p-5 sm:p-7 flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#ED5642] bg-white/95 backdrop-blur-md px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-[#EAEAEB] shadow-xs group-hover:border-[#ED5642]/40 transition-colors">
                     {session.badge}
                   </span>
-                  <span className="text-xs font-bold text-[#1E1E24] bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#EAEAEB] shadow-xs group-hover:text-[#ED5642] transition-colors">
+                  <span className="text-xs font-bold text-[#1E1E24] bg-white/90 backdrop-blur-md px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-[#EAEAEB] shadow-xs group-hover:text-[#ED5642] transition-colors">
                     {session.price}
                   </span>
                 </div>
 
                 {/* Layer 5: Middle Ambient Spacer */}
-                <div className="relative z-10 flex-1" />
+                <div className="relative z-10 flex-1 min-h-[40px] sm:min-h-0" />
 
-                {/* Layer 6: Signature Bottom Content Box (Identical across ALL 4 cards) */}
-                <div className="relative z-10 p-6 sm:p-7 pt-5 bg-gradient-to-t from-white via-white/95 to-transparent">
+                {/* Layer 6: Signature Bottom Content Box */}
+                <div className="relative z-10 p-5 sm:p-7 pt-4 sm:pt-5 bg-gradient-to-t from-white via-white/95 to-transparent">
                   {/* Thumbnail & Counter Row */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-2xl border border-[#EAEAEB] overflow-hidden bg-white shadow-xs group-hover:border-[#ED5642] group-hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl border border-[#EAEAEB] overflow-hidden bg-white shadow-xs group-hover:border-[#ED5642] group-hover:scale-105 transition-all duration-300">
                       <img
                         src={session.thumbnail}
                         alt={session.title}
@@ -160,29 +160,29 @@ export default function NajlaSessionsSection({ onOpenBooking, onSelectService })
                       />
                     </div>
 
-                    <span className="text-sm font-extrabold text-[#5A5A63] tracking-widest font-mono group-hover:text-[#ED5642] transition-colors">
+                    <span className="text-xs sm:text-sm font-extrabold text-[#5A5A63] tracking-widest font-mono group-hover:text-[#ED5642] transition-colors">
                       {session.number}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-[#1E1E24] leading-snug tracking-tight mb-2 group-hover:text-[#ED5642] transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1E1E24] leading-snug tracking-tight mb-1.5 sm:mb-2 group-hover:text-[#ED5642] transition-colors duration-300">
                     {session.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs text-[#5A5A63] leading-relaxed line-clamp-3 mb-4">
+                  <p className="text-xs text-[#5A5A63] leading-relaxed line-clamp-2 sm:line-clamp-3 mb-3 sm:mb-4">
                     {session.description}
                   </p>
 
-                  {/* Interactive Meta Bar: Duration & Reserve Button */}
-                  <div className="pt-3 border-t border-[#EAEAEB] flex items-center justify-between text-xs font-bold text-[#ED5642]">
-                    <span className="flex items-center gap-1.5 text-[#5A5A63] font-semibold">
+                  {/* Interactive Meta Bar */}
+                  <div className="pt-2.5 sm:pt-3 border-t border-[#EAEAEB] flex items-center justify-between text-xs font-bold text-[#ED5642]">
+                    <span className="flex items-center gap-1.5 text-[#5A5A63] font-semibold text-[11px] sm:text-xs">
                       <Clock className="w-3.5 h-3.5 text-[#ED5642]" />
                       <span>{session.duration}</span>
                     </span>
 
-                    <span className="flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-300">
+                    <span className="flex items-center gap-1 group-hover:translate-x-1.5 transition-transform duration-300 text-xs">
                       <span>Reserve</span>
                       <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
@@ -191,6 +191,11 @@ export default function NajlaSessionsSection({ onOpenBooking, onSelectService })
               </div>
             )
           })}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="sm:hidden flex items-center justify-center gap-1.5 pt-2 text-[11px] text-[#8B8B93] font-semibold">
+          <span>← Swipe to explore all 4 sessions →</span>
         </div>
 
         {/* Bottom Concierge Note */}

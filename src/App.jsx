@@ -5,6 +5,7 @@ import NajlaNavbar from './components/NajlaNavbar'
 import SkinEnvyFooter from './components/SkinEnvyFooter'
 import SkinEnvyCartDrawer from './components/SkinEnvyCartDrawer'
 import NajlaBookingModal from './components/NajlaBookingModal'
+import MobileBottomDock from './components/MobileBottomDock'
 import { Check } from 'lucide-react'
 
 // Page Components
@@ -149,7 +150,7 @@ export default function App() {
       />
 
       {/* Multi-Page Routes */}
-      <main className="flex-1 w-full bg-white">
+      <main className="flex-1 w-full bg-white pb-20 md:pb-0">
         <Routes>
           <Route
             path="/"
@@ -250,6 +251,13 @@ export default function App() {
         }}
         preselectedService={preselectedService}
         defaultBranch={selectedBranch}
+      />
+
+      {/* Mobile Floating Glass Action Dock */}
+      <MobileBottomDock
+        onOpenBooking={() => setBookingOpen(true)}
+        onOpenCart={() => setCartOpen(true)}
+        cartCount={cartCount}
       />
     </div>
   )

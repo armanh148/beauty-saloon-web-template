@@ -60,14 +60,17 @@ export default function NajlaBookingModal({ isOpen, onClose, preselectedService,
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
       <div
-        className="relative w-full max-w-xl bg-white text-[#1E1E24] rounded-3xl p-6 sm:p-10 shadow-2xl max-h-[90vh] overflow-y-auto border border-[#EAEAEB]"
+        className="relative w-full max-w-xl bg-white text-[#1E1E24] rounded-t-3xl sm:rounded-3xl p-5 sm:p-10 shadow-2xl max-h-[92vh] overflow-y-auto border border-[#EAEAEB] touch-momentum"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Mobile Pull Handle */}
+        <div className="w-12 h-1.5 bg-[#DDDDDF] rounded-full mx-auto mb-3 sm:hidden" />
+
         <button
           onClick={handleReset}
-          className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#F7F7F8] hover:bg-[#ED5642] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+          className="absolute top-4 sm:top-6 right-4 sm:right-6 w-9 h-9 rounded-full bg-[#F7F7F8] hover:bg-[#ED5642] hover:text-white flex items-center justify-center transition-colors cursor-pointer touch-feedback"
         >
           <X className="w-5 h-5" />
         </button>

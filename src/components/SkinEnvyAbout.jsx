@@ -3,21 +3,21 @@ import { Star, ArrowRight, Play } from 'lucide-react'
 
 export default function SkinEnvyAbout({ onScrollToShop, onOpenBooking }) {
   return (
-    <section id="about" className="w-full py-20 sm:py-28 bg-white border-b border-[#EAEAEB]">
-      <div className="w-full px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+    <section id="about" className="w-full py-12 sm:py-24 bg-white border-b border-[#EAEAEB]">
+      <div className="w-full px-4 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14">
         {/* ================= LEFT COLUMN: BADGE AT TOP, CTA AT BOTTOM ================= */}
-        <div className="lg:col-span-3 flex flex-col justify-between items-start gap-8 scroll-reveal-left">
+        <div className="lg:col-span-3 flex flex-col justify-between items-start gap-4 sm:gap-8 scroll-reveal-left">
           {/* Top Badge matching screenshot */}
-          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 border border-[#1E1E24]/15 bg-white text-xs font-bold uppercase tracking-wider text-[#1E1E24] rounded-full shadow-2xs hover:border-[#ED5642] hover:text-[#ED5642] transition-colors duration-300">
+          <div className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1 sm:py-1.5 border border-[#1E1E24]/15 bg-white text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#1E1E24] rounded-full shadow-2xs hover:border-[#ED5642] hover:text-[#ED5642] transition-colors duration-300">
             <Star className="w-3.5 h-3.5 fill-[#ED5642] text-[#ED5642]" />
             <span>ABOUT US</span>
           </div>
 
-          {/* Bottom Button matching screenshot */}
+          {/* Bottom Button for Desktop */}
           <button
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-3.5 bg-[#ED5642] hover:bg-[#D8432F] text-white pl-6 pr-2.5 py-2.5 font-bold text-xs sm:text-sm tracking-wide rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1.5 cursor-pointer group w-fit mt-auto"
+            className="hidden lg:inline-flex items-center gap-3.5 bg-[#ED5642] hover:bg-[#D8432F] text-white pl-6 pr-2.5 py-2.5 font-bold text-xs sm:text-sm tracking-wide rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1.5 cursor-pointer group w-fit mt-auto"
           >
             <span>Discover More</span>
             <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1.5 group-hover:bg-white group-hover:text-[#ED5642]">
@@ -27,16 +27,16 @@ export default function SkinEnvyAbout({ onScrollToShop, onOpenBooking }) {
         </div>
 
         {/* ================= RIGHT COLUMN: HEADLINE + 2-COLUMN BOTTOM ================= */}
-        <div className="lg:col-span-9 flex flex-col gap-10 sm:gap-12">
+        <div className="lg:col-span-9 flex flex-col gap-6 sm:gap-12">
           {/* Editorial Headline matching screenshot */}
-          <h2 className="font-serif-editorial text-2xl sm:text-4xl lg:text-[2.65rem] font-normal text-[#1E1E24] leading-[1.25] tracking-tight max-w-4xl scroll-reveal">
+          <h2 className="font-serif-editorial text-xl sm:text-4xl lg:text-[2.65rem] font-normal text-[#1E1E24] leading-[1.3] sm:leading-[1.25] tracking-tight max-w-4xl scroll-reveal">
             Your wellness retreat starts right here with restorative therapies, skilled professionals, and a truly refreshing spa experience.
           </h2>
 
           {/* Bottom Row: 3-Image Collage (Left) + Metrics Card (Right) */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-            {/* 3-Image Collage matching screenshot */}
-            <div className="md:col-span-7 grid grid-cols-12 gap-3 min-h-[320px] scroll-reveal-scale">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+            {/* 3-Image Collage */}
+            <div className="md:col-span-7 grid grid-cols-12 gap-2.5 sm:gap-3 min-h-[240px] sm:min-h-[320px] scroll-reveal-scale">
               {/* Main Large / Tall Image on Left */}
               <div className="col-span-7 overflow-hidden rounded-2xl border border-[#EAEAEB] bg-[#EAEAEB] group shadow-xs cursor-pointer hover:border-[#ED5642]/40 transition-colors">
                 <img
@@ -100,6 +100,19 @@ export default function SkinEnvyAbout({ onScrollToShop, onOpenBooking }) {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Mobile Discover More Button */}
+          <div className="lg:hidden pt-2 flex justify-center">
+            <button
+              onClick={onOpenBooking}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#ED5642] hover:bg-[#D8432F] text-white pl-6 pr-2.5 py-3 font-bold text-xs tracking-wide rounded-full shadow-md active:scale-95 transition-all cursor-pointer group touch-feedback"
+            >
+              <span>Discover More Treatments</span>
+              <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1 group-hover:bg-white group-hover:text-[#ED5642]">
+                <ArrowRight className="w-4 h-4 text-white group-hover:text-[#ED5642] transition-colors" />
+              </span>
+            </button>
           </div>
         </div>
       </div>
