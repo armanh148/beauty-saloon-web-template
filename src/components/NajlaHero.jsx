@@ -119,32 +119,36 @@ export default function NajlaHero({ onOpenBooking, onScrollToServices, selectedB
             {slides[current].description}
           </p>
 
-          {/* Dual Action Buttons (Mobile Grid & Desktop Row) */}
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 sm:gap-6 mb-6 sm:mb-10">
+          {/* Action Buttons (Consistent Height, Perfectly Balanced Mobile & Desktop) */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-4 mb-6 sm:mb-10 max-w-xl">
+            {/* Primary Action Button */}
             <button
               onClick={onOpenBooking}
-              className="skinenvy-btn-primary text-xs sm:text-sm py-2.5 sm:py-3.5 px-4 sm:px-8 shadow-lg cursor-pointer text-center touch-feedback"
+              className="w-full sm:w-auto h-12 px-6 sm:px-8 bg-[#ED5642] hover:bg-[#D8432F] text-white font-bold text-xs sm:text-sm tracking-wide rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer touch-feedback whitespace-nowrap flex-shrink-0"
             >
-              Book Appointment
+              <span>Book an Appointment</span>
             </button>
 
-            <a
-              href="https://wa.me/923341430303"
-              target="_blank"
-              rel="noreferrer"
-              className="px-4 sm:px-6 py-2.5 sm:py-3.5 bg-[#1EBE5D] hover:bg-[#18A450] text-white font-semibold text-xs sm:text-[0.95rem] rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-1.5 sm:gap-2 touch-feedback"
-            >
-              <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              <span>WhatsApp Us</span>
-            </a>
+            {/* Secondary Actions (Side-by-Side with Equal Height) */}
+            <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center sm:gap-3">
+              <a
+                href="https://wa.me/923341430303"
+                target="_blank"
+                rel="noreferrer"
+                className="h-12 px-4 sm:px-6 bg-[#1EBE5D] hover:bg-[#18A450] text-white font-semibold text-xs sm:text-sm rounded-full transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer flex items-center justify-center gap-1.5 touch-feedback whitespace-nowrap"
+              >
+                <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                <span>WhatsApp Us</span>
+              </a>
 
-            <button
-              onClick={onScrollToServices}
-              className="col-span-2 sm:col-span-1 px-4 sm:px-6 py-2 sm:py-3.5 bg-white hover:bg-[#1E1E24] text-[#1E1E24] hover:text-white border border-[#EAEAEB] hover:border-[#1E1E24] font-semibold text-xs sm:text-[0.95rem] rounded-full transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-1.5 touch-feedback"
-            >
-              <span>Explore Services</span>
-              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            </button>
+              <button
+                onClick={onScrollToServices}
+                className="h-12 px-4 sm:px-6 bg-white hover:bg-[#1E1E24] text-[#1E1E24] hover:text-white border border-[#EAEAEB] hover:border-[#1E1E24] font-semibold text-xs sm:text-sm rounded-full transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer flex items-center justify-center gap-1.5 touch-feedback whitespace-nowrap"
+              >
+                <span>Explore Services</span>
+                <ArrowUpRight className="w-4 h-4 flex-shrink-0" />
+              </button>
+            </div>
           </div>
 
           {/* Quick Branch Selector (Swipeable Pills on Mobile) */}
