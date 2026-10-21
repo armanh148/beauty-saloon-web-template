@@ -39,18 +39,18 @@ export default function AboutPage({ onOpenBooking }) {
   return (
     <div className="bg-white min-h-screen">
       {/* Page Header Banner */}
-      <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
+      <section className="bg-white border-b border-[#EAEAEB] py-10 sm:py-20">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-3">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
               <span>ABOUT NAJLA’S</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-[#1E1E24] leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4 sm:mb-6">
               25 Years of Redefining Luxury Bridal Care & Clinical Aesthetics in Karachi.
             </h1>
-            <p className="text-base sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
               From our flagship bridal lounge on Tariq Road to 9 accessible branches across the metropolis, Najla’s Beauty Clinic & Institute combines international cosmetic science with timeless bridal artistry.
             </p>
           </div>
@@ -64,32 +64,32 @@ export default function AboutPage({ onOpenBooking }) {
       <SkinEnvyAbout onOpenBooking={onOpenBooking} />
 
       {/* 4 Pillars of Excellence */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16 scroll-reveal">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="max-w-2xl mb-8 sm:mb-16 scroll-reveal">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
               THE NAJLA’S DISTINCTION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
               Why generations of Karachi families entrust us with their biggest milestones.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {pillars.map((item, idx) => {
               const Icon = item.icon
               const delayClass = `scroll-reveal-delay-${idx + 1}`
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white p-8 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2.5 hover:shadow-2xl transition-all duration-500 group cursor-default`}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white p-5 sm:p-8 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group cursor-default`}
                 >
                   <div>
-                    <div className="w-12 h-12 bg-white text-[#ED5642] flex items-center justify-center rounded-xl border border-[#EAEAEB] mb-6 shadow-xs group-hover:bg-[#ED5642] group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white text-[#ED5642] flex items-center justify-center rounded-xl border border-[#EAEAEB] mb-4 sm:mb-6 shadow-xs group-hover:bg-[#ED5642] group-hover:text-white group-hover:scale-105 transition-all duration-300">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#1E1E24] mb-3 group-hover:text-[#ED5642] transition-colors duration-300">{item.title}</h3>
-                    <p className="text-sm text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{item.desc}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#1E1E24] mb-2 sm:mb-3 group-hover:text-[#ED5642] transition-colors duration-300">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{item.desc}</p>
                   </div>
                 </div>
               )
@@ -99,14 +99,14 @@ export default function AboutPage({ onOpenBooking }) {
       </section>
 
       {/* Sindh Board Beautician Training Institute Spotlight */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white overflow-hidden">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 overflow-hidden rounded-3xl border border-[#EAEAEB] group aspect-[4/3] bg-white shadow-md hover:shadow-2xl hover:border-[#ED5642]/40 transition-all duration-500 scroll-reveal-left">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white overflow-hidden">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <div className="lg:col-span-6 overflow-hidden rounded-2xl sm:rounded-3xl border border-[#EAEAEB] group aspect-[16/10] sm:aspect-[4/3] bg-white shadow-md hover:shadow-2xl hover:border-[#ED5642]/40 transition-all duration-500 scroll-reveal-left">
               <img
                 src="https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b75c_Team%20image.jpg"
                 alt="Sindh Board Institute Students"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
               />
             </div>
 
@@ -115,28 +115,28 @@ export default function AboutPage({ onOpenBooking }) {
                 <BookOpen className="w-4 h-4" />
                 <span>GOVERNMENT ACCREDITED TRAINING</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-6">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight mb-4 sm:mb-6">
                 Najla’s Beauty Institute of Cosmetology & Aesthetics.
               </h2>
-              <p className="text-base text-[#5A5A63] leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-[#5A5A63] leading-relaxed mb-6 sm:mb-8">
                 Officially recognized by the Sindh Board of Technical Education, our institute has trained over 12,000 professional beauticians, bridal makeup artists, and salon entrepreneurs across Pakistan.
               </p>
 
-              <div className="flex flex-col gap-3.5 mb-10 text-sm font-semibold text-[#1E1E24]">
-                <div className="flex items-center gap-3 group cursor-default">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+              <div className="flex flex-col gap-3 mb-8 text-xs sm:text-sm font-semibold text-[#1E1E24]">
+                <div className="flex items-start gap-2.5 group cursor-default">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#ED5642] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="group-hover:text-[#ED5642] transition-colors">3-Month Professional Cosmetology & Hair Design Diploma</span>
                 </div>
-                <div className="flex items-center gap-3 group cursor-default">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                <div className="flex items-start gap-2.5 group cursor-default">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#ED5642] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="group-hover:text-[#ED5642] transition-colors">6-Month Comprehensive Master Cosmetology & Salon Management</span>
                 </div>
-                <div className="flex items-center gap-3 group cursor-default">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                <div className="flex items-start gap-2.5 group cursor-default">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#ED5642] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="group-hover:text-[#ED5642] transition-colors">100% Practical hands-on training on real salon clients</span>
                 </div>
-                <div className="flex items-center gap-3 group cursor-default">
-                  <CheckCircle2 className="w-5 h-5 text-[#ED5642] group-hover:scale-120 transition-transform" />
+                <div className="flex items-start gap-2.5 group cursor-default">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#ED5642] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="group-hover:text-[#ED5642] transition-colors">Government recognized certification accepted globally</span>
                 </div>
               </div>
@@ -145,7 +145,7 @@ export default function AboutPage({ onOpenBooking }) {
                 href="https://wa.me/923341430303?text=Hi%20Najla's,%20I%20would%20like%20information%20on%20Institute%20courses"
                 target="_blank"
                 rel="noreferrer"
-                className="skinenvy-btn-primary flex items-center gap-2 group w-fit rounded-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="skinenvy-btn-primary flex items-center justify-center gap-2 group w-full sm:w-fit h-12 rounded-full hover:shadow-xl transition-all duration-300 text-sm font-bold"
               >
                 <span>Inquire About Course Admissions</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -156,28 +156,29 @@ export default function AboutPage({ onOpenBooking }) {
       </section>
 
       {/* 25-Year Heritage Timeline */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16 scroll-reveal">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="max-w-2xl mb-8 sm:mb-16 scroll-reveal">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
               OUR HISTORIC JOURNEY
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
               A quarter-century of pioneering beauty standards in Karachi.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-6">
             {milestones.map((m, idx) => {
               const delayClass = `scroll-reveal-delay-${idx + 1}`
+              const isLast = idx === milestones.length - 1
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} border-t-2 border-[#ED5642] pt-6 flex flex-col justify-between group p-4 rounded-xl hover:bg-[#FDF6F4] transition-all duration-400 hover:-translate-y-2 cursor-default`}
+                  className={`scroll-reveal ${delayClass} ${isLast ? 'col-span-2 md:col-span-1' : ''} border-t-2 border-[#ED5642] pt-4 sm:pt-6 flex flex-col justify-between group p-3.5 sm:p-4 rounded-xl bg-[#F7F7F8] md:bg-transparent hover:bg-[#FDF6F4] transition-all duration-300 cursor-default`}
                 >
                   <div>
-                    <span className="text-2xl font-extrabold text-[#ED5642] block mb-2 group-hover:scale-110 transition-transform">{m.year}</span>
-                    <h4 className="text-base font-bold text-[#1E1E24] mb-2 group-hover:text-[#ED5642] transition-colors">{m.title}</h4>
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#ED5642] block mb-1.5 sm:mb-2">{m.year}</span>
+                    <h4 className="text-sm sm:text-base font-bold text-[#1E1E24] mb-1.5 group-hover:text-[#ED5642] transition-colors">{m.title}</h4>
                     <p className="text-xs text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors">{m.desc}</p>
                   </div>
                 </div>

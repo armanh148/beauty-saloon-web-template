@@ -60,19 +60,19 @@ export default function SkinEnvyBlog() {
   ]
 
   return (
-    <section id="blog" className="w-full py-20 sm:py-28 bg-white border-b border-[#EAEAEB]">
-      <div className="w-full px-6 sm:px-10 lg:px-14">
+    <section id="blog" className="w-full py-12 sm:py-28 bg-white border-b border-[#EAEAEB]">
+      <div className="w-full px-4 sm:px-10 lg:px-14">
         {/* Section Header matching the reference screenshot */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 scroll-reveal">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-16 scroll-reveal">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-[#EAEAEB] rounded-full text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-3 shadow-2xs hover:border-[#ED5642] transition-colors duration-300">
+            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 bg-white border border-[#EAEAEB] rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] mb-2 sm:mb-3 shadow-2xs hover:border-[#ED5642] transition-colors duration-300">
               <span className="w-2 h-2 rounded-full bg-[#ED5642] animate-pulse" />
               EDITORIAL JOURNAL
             </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-[3.2rem] font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-5xl lg:text-[3.2rem] font-bold text-[#1E1E24] leading-[1.15] sm:leading-[1.12] tracking-tight mb-2 sm:mb-3">
               Latest beauty news & insights
             </h2>
-            <p className="text-sm sm:text-base text-[#5A5A63] leading-relaxed max-w-xl">
+            <p className="text-xs sm:text-base text-[#5A5A63] leading-relaxed max-w-xl">
               Stay informed! Explore our latest updates on bridal artistry, clinical skincare insights, and Karachi beauty trends.
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function SkinEnvyBlog() {
           <div>
             <a
               href="#blog"
-              className="inline-flex items-center justify-center px-6 py-2.5 bg-white hover:bg-[#1E1E24] text-[#1E1E24] hover:text-white border border-[#EAEAEB] hover:border-[#1E1E24] rounded-full text-xs font-bold transition-all duration-300 shadow-xs cursor-pointer hover:shadow-md hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-5 sm:px-6 h-10 sm:h-11 bg-white hover:bg-[#1E1E24] text-[#1E1E24] hover:text-white border border-[#EAEAEB] hover:border-[#1E1E24] rounded-full text-xs font-bold transition-all duration-300 shadow-xs cursor-pointer hover:shadow-md"
             >
               View all blogs
             </a>
@@ -88,32 +88,32 @@ export default function SkinEnvyBlog() {
         </div>
 
         {/* Asymmetric 5-Post Layout matching user's screenshot */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
           {/* ================= LEFT COLUMN: LARGE FEATURED POST ================= */}
           <div
             onClick={() => setSelectedPost(featuredPost)}
-            className="lg:col-span-5 bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-3xl flex flex-col justify-between group card-hover shadow-xs cursor-pointer overflow-hidden min-h-[520px] hover:-translate-y-2.5 hover:shadow-2xl transition-all duration-500 scroll-reveal-left delay-100"
+            className="lg:col-span-5 bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-2xl sm:rounded-3xl flex flex-col justify-between group card-hover shadow-xs cursor-pointer overflow-hidden sm:min-h-[520px] hover:-translate-y-2 hover:shadow-xl transition-all duration-300 scroll-reveal-left delay-100"
           >
             {/* Image Flush edge-to-edge (no padding around it) */}
             <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#EAEAEB]">
               <img
                 src={featuredPost.image}
                 alt={featuredPost.title}
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
               />
-              <span className="absolute top-4 left-4 bg-[#1E1E24]/85 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full border border-white/10 shadow-xs group-hover:bg-[#ED5642] group-hover:border-[#ED5642] transition-colors duration-300">
+              <span className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-[#1E1E24]/85 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/10 shadow-xs group-hover:bg-[#ED5642] group-hover:border-[#ED5642] transition-colors duration-300">
                 {featuredPost.category}
               </span>
             </div>
 
             {/* Card Content with inner padding */}
-            <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between">
+            <div className="p-4 sm:p-7 flex flex-col flex-1 justify-between">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#1E1E24] leading-snug tracking-tight mb-3 group-hover:text-[#ED5642] transition-colors duration-300">
+                <h3 className="text-lg sm:text-2xl font-bold text-[#1E1E24] leading-snug tracking-tight mb-2 sm:mb-3 group-hover:text-[#ED5642] transition-colors duration-300">
                   {featuredPost.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
+                <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-4 sm:mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
                   {featuredPost.description}
                 </p>
               </div>
@@ -139,24 +139,24 @@ export default function SkinEnvyBlog() {
               <div
                 key={post.id}
                 onClick={() => setSelectedPost(post)}
-                className="bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-3xl flex flex-col justify-between group card-hover shadow-xs cursor-pointer overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500"
+                className="bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 rounded-2xl sm:rounded-3xl flex flex-col justify-between group card-hover shadow-xs cursor-pointer overflow-hidden hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300"
               >
                 {/* Image Flush edge-to-edge (no padding around it) */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EAEAEB]">
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
                   />
-                  <span className="absolute top-3 left-3 bg-[#1E1E24]/85 backdrop-blur-md text-white text-[9.5px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full border border-white/10 shadow-xs group-hover:bg-[#ED5642] group-hover:border-[#ED5642] transition-colors duration-300">
+                  <span className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 bg-[#1E1E24]/85 backdrop-blur-md text-white text-[9.5px] font-bold uppercase tracking-wider px-2.5 sm:px-3 py-0.5 rounded-full border border-white/10 shadow-xs group-hover:bg-[#ED5642] group-hover:border-[#ED5642] transition-colors duration-300">
                     {post.category}
                   </span>
                 </div>
 
                 {/* Card Content with inner padding */}
-                <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+                <div className="p-4 sm:p-6 flex flex-col flex-1 justify-between">
                   <div>
-                    <h4 className="text-base font-bold text-[#1E1E24] leading-snug tracking-tight mb-4 line-clamp-2 group-hover:text-[#ED5642] transition-colors duration-300">
+                    <h4 className="text-sm sm:text-base font-bold text-[#1E1E24] leading-snug tracking-tight mb-3 sm:mb-4 line-clamp-2 group-hover:text-[#ED5642] transition-colors duration-300">
                       {post.title}
                     </h4>
                   </div>

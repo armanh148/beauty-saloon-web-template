@@ -46,18 +46,18 @@ export default function TeamPage({ onOpenBooking }) {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner */}
-      <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
+      <section className="bg-white border-b border-[#EAEAEB] py-10 sm:py-20">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-3">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
               <span>MASTER DIRECTORS & ARTISTS</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-[#1E1E24] leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4 sm:mb-6">
               Meet Karachi’s Foremost Bridal Stylists & Clinical Estheticians.
             </h1>
-            <p className="text-base sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
               Over 100 passionate, certified professionals across 9 branches dedicated to making your salon visit relaxing, hygienic, and transformative.
             </p>
           </div>
@@ -68,32 +68,32 @@ export default function TeamPage({ onOpenBooking }) {
       <SkinEnvyTeam onOpenBooking={onOpenBooking} />
 
       {/* Senior Master Faculty Detailed Profiles */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16 scroll-reveal">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="max-w-2xl mb-8 sm:mb-16 scroll-reveal">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
               FACULTY PROFILES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
               Certified leadership with international credentials.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4 xl:gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
             {masterFaculty.map((member, idx) => {
               const delayClass = `scroll-reveal-delay-${idx + 1}`
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 p-5 lg:p-4 xl:p-6 rounded-2xl flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group`}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 p-4 sm:p-5 lg:p-4 xl:p-6 rounded-2xl flex flex-col justify-between card-hover hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group`}
                 >
                   <div>
-                    <div className="flex items-start gap-3 mb-4">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] group-hover:border-[#ED5642] flex-shrink-0 shadow-2xs transition-colors duration-300">
+                    <div className="flex items-start gap-3 mb-3 sm:mb-4">
+                      <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-[#EAEAEB] border border-[#EAEAEB] group-hover:border-[#ED5642] flex-shrink-0 shadow-2xs transition-colors duration-300">
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover object-top group-hover:scale-115 transition-transform duration-500"
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="min-w-0 flex-1">
@@ -109,27 +109,27 @@ export default function TeamPage({ onOpenBooking }) {
                       </div>
                     </div>
 
-                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-4 group-hover:text-[#1E1E24] transition-colors duration-300">
+                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-3 sm:mb-4 group-hover:text-[#1E1E24] transition-colors duration-300">
                       {member.bio}
                     </p>
 
-                    <div className="p-3 bg-white group-hover:bg-[#FDF6F4] border border-[#EAEAEB] group-hover:border-[#ED5642]/20 rounded-xl mb-5 text-xs transition-colors duration-300">
+                    <div className="p-3 bg-white group-hover:bg-[#FDF6F4] border border-[#EAEAEB] group-hover:border-[#ED5642]/20 rounded-xl mb-4 sm:mb-5 text-xs transition-colors duration-300">
                       <strong className="text-[#1E1E24] block mb-1 text-[11px]">Specialty:</strong>
-                      <span className="text-[#5A5A63] text-xs leading-snug block">{member.specialty}</span>
+                      <span className="text-[#5A5A63] text-[11px] sm:text-xs leading-snug block">{member.specialty}</span>
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-[#EAEAEB] flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start sm:items-center lg:items-start xl:items-center justify-between gap-2 text-xs">
+                  <div className="pt-3 sm:pt-4 border-t border-[#EAEAEB] flex flex-row items-center justify-between gap-2 text-xs">
                     <span className="text-[#8B8B93] flex items-center gap-1 text-[11px] truncate">
-                      <MapPin className="w-3.5 h-3.5 text-[#ED5642] flex-shrink-0 group-hover:animate-bounce-subtle" />
+                      <MapPin className="w-3.5 h-3.5 text-[#ED5642] flex-shrink-0" />
                       <span className="truncate">{member.branch}</span>
                     </span>
 
                     <button
                       onClick={onOpenBooking}
-                      className="text-[#ED5642] font-bold hover:underline cursor-pointer text-xs flex-shrink-0 group-hover:translate-x-1 transition-transform inline-flex items-center gap-0.5"
+                      className="text-[#ED5642] font-bold hover:underline cursor-pointer text-xs flex-shrink-0 inline-flex items-center gap-0.5"
                     >
-                      <span>Request Appointment</span>
+                      <span>Book</span>
                       <ArrowUpRight className="w-3 h-3" />
                     </button>
                   </div>

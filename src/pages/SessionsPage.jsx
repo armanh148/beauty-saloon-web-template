@@ -180,7 +180,7 @@ export default function SessionsPage({ onOpenBooking, onSelectService }) {
 
                     <button
                       onClick={() => onSelectService({ title: session.title, price: session.price })}
-                      className="skinenvy-btn-primary rounded-full text-xs py-2 px-3 sm:px-4 cursor-pointer flex-shrink-0 text-center hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 touch-feedback"
+                      className="skinenvy-btn-primary rounded-full text-xs h-10 px-3.5 sm:px-4 cursor-pointer flex-shrink-0 flex items-center justify-center font-bold text-center hover:shadow-lg transition-all duration-300 touch-feedback"
                     >
                       Reserve Session
                     </button>

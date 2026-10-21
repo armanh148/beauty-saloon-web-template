@@ -109,18 +109,18 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner */}
-      <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
+      <section className="bg-white border-b border-[#EAEAEB] py-10 sm:py-20">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-3">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
               <span>SERVICES & MENU</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-[#1E1E24] leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4 sm:mb-6">
               Complete Signature Salon & Clinical Treatment Menu.
             </h1>
-            <p className="text-base sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
               Explore our full suite of luxury bridal artistry, dermatological skincare, organic hair reconstruction, and relaxing spa therapies across all 9 Karachi flagship clinics.
             </p>
           </div>
@@ -131,28 +131,28 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
       <NajlaServices onSelectService={onSelectService} />
 
       {/* Detailed Service Price Catalog */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 scroll-reveal">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12 scroll-reveal">
             <div className="max-w-xl">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
                 PRICING DIRECTORY
               </span>
-              <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
                 Transparent rates for every signature treatment.
               </h2>
             </div>
 
             {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {serviceCategories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-2 text-xs font-bold rounded-full transition-all duration-300 cursor-pointer border ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold rounded-full transition-all duration-300 cursor-pointer border ${
                     activeCategory === cat
-                      ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm scale-105'
-                      : 'bg-[#F7F7F8] text-[#5A5A63] hover:bg-[#EAEAEB] hover:text-[#1E1E24] border-[#EAEAEB] hover:-translate-y-0.5'
+                      ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm'
+                      : 'bg-[#F7F7F8] text-[#5A5A63] hover:bg-[#EAEAEB] hover:text-[#1E1E24] border-[#EAEAEB]'
                   }`}
                 >
                   {cat}
@@ -162,17 +162,17 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
           </div>
 
           {/* Service Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filtered.map((item, idx) => {
               const delayClass = `scroll-reveal-delay-${(idx % 6) + 1}`
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white p-7 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group`}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white p-4 sm:p-7 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group`}
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-white px-3 py-1 rounded-full border border-[#EAEAEB] shadow-2xs group-hover:border-[#ED5642]/30 transition-colors">
+                    <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-white px-2.5 py-0.5 sm:py-1 rounded-full border border-[#EAEAEB] shadow-2xs group-hover:border-[#ED5642]/30 transition-colors">
                         {item.category}
                       </span>
                       <span className="text-xs text-[#8B8B93] flex items-center gap-1">
@@ -181,20 +181,20 @@ export default function ServicesPage({ onSelectService, onOpenBooking }) {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-[#1E1E24] mb-2 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-bold text-[#1E1E24] mb-1.5 sm:mb-2 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
+                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-4 sm:mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#EAEAEB] flex items-center justify-between">
-                    <span className="text-lg font-extrabold text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">{item.price}</span>
+                  <div className="pt-3 sm:pt-4 border-t border-[#EAEAEB] flex items-center justify-between">
+                    <span className="text-base sm:text-lg font-extrabold text-[#1E1E24] group-hover:text-[#ED5642] transition-colors">{item.price}</span>
                     <button
                       onClick={() => onSelectService({ title: item.title, price: item.price })}
-                      className="skinenvy-btn-dark rounded-full text-xs py-2 px-5 cursor-pointer hover:bg-[#ED5642] hover:border-[#ED5642] hover:shadow-md transition-all duration-300"
+                      className="skinenvy-btn-dark rounded-full text-xs h-10 px-4 flex items-center justify-center font-bold cursor-pointer hover:bg-[#ED5642] hover:border-[#ED5642] hover:shadow-md transition-all duration-300"
                     >
                       Book Now
                     </button>

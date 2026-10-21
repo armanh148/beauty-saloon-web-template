@@ -77,18 +77,18 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner */}
-      <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
+      <section className="bg-white border-b border-[#EAEAEB] py-10 sm:py-20">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-3">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
               <span>CLINICAL SKINCARE</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-[#1E1E24] leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4 sm:mb-6">
               Original HydraFacial MD® 7-Step Vortex Clinical Skincare.
             </h1>
-            <p className="text-base sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
               Experience the world’s most celebrated medical facial. Painless extraction, deep cellular hydration, and immediate red-carpet glass skin glow with zero downtime.
             </p>
           </div>
@@ -96,36 +96,36 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
       </section>
 
       {/* Hero Visual & Feature Row */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white overflow-hidden">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 overflow-hidden rounded-3xl border border-[#EAEAEB] group aspect-[4/3] bg-[#EAEAEB] shadow-md hover:shadow-2xl hover:border-[#ED5642]/40 transition-all duration-500 scroll-reveal-left">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white overflow-hidden">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <div className="lg:col-span-6 overflow-hidden rounded-2xl sm:rounded-3xl border border-[#EAEAEB] group aspect-[16/10] sm:aspect-[4/3] bg-[#EAEAEB] shadow-md hover:shadow-2xl hover:border-[#ED5642]/40 transition-all duration-500 scroll-reveal-left">
               <img
                 src="https://cdn.prod.website-files.com/69db201b114de85f9288b638/69db201b114de85f9288b722_Blog%20Image%206.jpg"
                 alt="HydraFacial MD Treatment at Najla's"
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108 group-hover:brightness-105"
+                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-105"
               />
             </div>
 
             <div className="lg:col-span-6 flex flex-col justify-center scroll-reveal-right delay-200">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
                 PATENTED TECHNOLOGY
               </span>
-              <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-6">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight mb-4 sm:mb-6">
                 Why Karachi brides swear by HydraFacial MD.
               </h2>
-              <p className="text-base text-[#5A5A63] leading-relaxed mb-8">
+              <p className="text-sm sm:text-base text-[#5A5A63] leading-relaxed mb-6 sm:mb-8">
                 Karachi’s coastal humidity and urban dust clog pores and accelerate premature dullness. HydraFacial MD is the only hydra-dermabrasion procedure that uses patented Vortex-Fusion technology to simultaneously vacuum impurities while infusing medical antioxidants.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold text-[#1E1E24]">
-                <div className="p-4 bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/40 rounded-2xl transition-all duration-300 card-hover">
-                  <span className="text-lg font-extrabold text-[#ED5642] block mb-1">0 Days</span>
-                  <span>Zero Downtime or Redness</span>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 text-xs font-bold text-[#1E1E24]">
+                <div className="p-3.5 sm:p-4 bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/40 rounded-xl sm:rounded-2xl transition-all duration-300 card-hover">
+                  <span className="text-base sm:text-lg font-extrabold text-[#ED5642] block mb-0.5 sm:mb-1">0 Days</span>
+                  <span className="text-[11px] sm:text-xs">Zero Downtime or Redness</span>
                 </div>
-                <div className="p-4 bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/40 rounded-2xl transition-all duration-300 card-hover">
-                  <span className="text-lg font-extrabold text-[#ED5642] block mb-1">30+ Days</span>
-                  <span>Lasting Dewy Moisture</span>
+                <div className="p-3.5 sm:p-4 bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/40 rounded-xl sm:rounded-2xl transition-all duration-300 card-hover">
+                  <span className="text-base sm:text-lg font-extrabold text-[#ED5642] block mb-0.5 sm:mb-1">30+ Days</span>
+                  <span className="text-[11px] sm:text-xs">Lasting Dewy Moisture</span>
                 </div>
               </div>
             </div>
@@ -134,29 +134,30 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
       </section>
 
       {/* 7-Step Protocol Breakdown */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16 scroll-reveal">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="max-w-2xl mb-8 sm:mb-16 scroll-reveal">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
               THE 7-STEP PROTOCOL
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
               A comprehensive clinical facial tailored for maximum luminosity.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {steps.map((st, idx) => {
               const delayClass = `scroll-reveal-delay-${(idx % 4) + 1}`
+              const isLast = idx === steps.length - 1
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} bg-white hover:bg-[#FDF6F4] p-7 rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-2.5 hover:shadow-xl transition-all duration-500 group cursor-default`}
+                  className={`scroll-reveal ${delayClass} ${isLast ? 'col-span-2 sm:col-span-2 lg:col-span-1' : ''} bg-[#F7F7F8] sm:bg-white hover:bg-[#FDF6F4] p-3.5 sm:p-7 rounded-xl sm:rounded-2xl border border-[#EAEAEB] hover:border-[#ED5642]/50 flex flex-col justify-between card-hover hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group cursor-default`}
                 >
                   <div>
-                    <span className="text-2xl font-extrabold text-[#ED5642] block mb-3 group-hover:scale-115 transition-transform">{st.num}</span>
-                    <h4 className="text-base font-bold text-[#1E1E24] mb-2 group-hover:text-[#ED5642] transition-colors duration-300">{st.title}</h4>
-                    <p className="text-xs text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{st.desc}</p>
+                    <span className="text-lg sm:text-2xl font-extrabold text-[#ED5642] block mb-1.5 sm:mb-3">{st.num}</span>
+                    <h4 className="text-xs sm:text-base font-bold text-[#1E1E24] mb-1 sm:mb-2 group-hover:text-[#ED5642] transition-colors duration-300">{st.title}</h4>
+                    <p className="text-[11px] sm:text-xs text-[#5A5A63] leading-relaxed group-hover:text-[#1E1E24] transition-colors duration-300">{st.desc}</p>
                   </div>
                 </div>
               )
@@ -166,32 +167,32 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
       </section>
 
       {/* HydraFacial Packages */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="max-w-2xl mb-16 scroll-reveal">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="max-w-2xl mb-8 sm:mb-16 scroll-reveal">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
               HYDRAFACIAL RATES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
               Select your clinical treatment level.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
             {packages.map((pkg, idx) => {
               const delayClass = `scroll-reveal-delay-${idx + 1}`
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} p-7 rounded-3xl border flex flex-col justify-between transition-all duration-500 card-hover hover:-translate-y-3 hover:shadow-2xl group ${
+                  className={`scroll-reveal ${delayClass} p-4 sm:p-7 rounded-2xl sm:rounded-3xl border flex flex-col justify-between transition-all duration-300 card-hover hover:-translate-y-2 hover:shadow-xl group ${
                     pkg.popular
-                      ? 'bg-white border-[#ED5642] shadow-md hover:border-[#ED5642]'
+                      ? 'bg-white border-[#ED5642] shadow-sm hover:border-[#ED5642]'
                       : 'bg-[#F7F7F8] hover:bg-white border-[#EAEAEB] hover:border-[#ED5642]/50'
                   }`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#ED5642] px-3 py-1 rounded-full shadow-xs group-hover:scale-105 transition-transform">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#ED5642] px-2.5 py-1 rounded-full shadow-xs">
                         {pkg.tag}
                       </span>
                       <span className="text-xs text-[#8B8B93] flex items-center gap-1">
@@ -200,20 +201,20 @@ export default function HydraFacialPage({ onOpenBooking, onSelectService }) {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-[#1E1E24] mb-2 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
+                    <h3 className="text-base sm:text-lg font-bold text-[#1E1E24] mb-2 leading-snug group-hover:text-[#ED5642] transition-colors duration-300">
                       {pkg.title}
                     </h3>
 
-                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
+                    <p className="text-xs text-[#5A5A63] leading-relaxed mb-4 sm:mb-6 group-hover:text-[#1E1E24] transition-colors duration-300">
                       {pkg.desc}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#EAEAEB]">
-                    <div className="text-xl font-extrabold text-[#1E1E24] mb-4 group-hover:text-[#ED5642] transition-colors">{pkg.price}</div>
+                  <div className="pt-3 sm:pt-4 border-t border-[#EAEAEB]">
+                    <div className="text-xl font-extrabold text-[#1E1E24] mb-3 sm:mb-4 group-hover:text-[#ED5642] transition-colors">{pkg.price}</div>
                     <button
                       onClick={() => onSelectService({ title: pkg.title, price: pkg.price })}
-                      className="w-full skinenvy-btn-dark rounded-full text-xs py-2.5 text-center cursor-pointer hover:bg-[#ED5642] hover:border-[#ED5642] hover:shadow-lg transition-all duration-300"
+                      className="w-full skinenvy-btn-dark rounded-full text-xs h-11 flex items-center justify-center font-bold cursor-pointer hover:bg-[#ED5642] hover:border-[#ED5642] hover:shadow-lg transition-all duration-300"
                     >
                       Book Treatment
                     </button>

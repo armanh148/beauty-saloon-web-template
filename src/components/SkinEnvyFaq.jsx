@@ -42,24 +42,24 @@ export default function SkinEnvyFaq({ onOpenBooking }) {
   ]
 
   return (
-    <section id="faq" className="w-full py-20 sm:py-28 bg-white border-b border-[#EAEAEB]">
-      <div className="w-full px-6 sm:px-10 lg:px-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <section id="faq" className="w-full py-12 sm:py-28 bg-white border-b border-[#EAEAEB]">
+      <div className="w-full px-4 sm:px-10 lg:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* ================= LEFT COLUMN: HEADER & STILL HAVE QUESTIONS CARD ================= */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full scroll-reveal-left">
             <div>
               {/* Header strictly matching reference image typography */}
-              <h2 className="text-3xl sm:text-5xl lg:text-[3.2rem] font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4">
+              <h2 className="text-2xl sm:text-5xl lg:text-[3.2rem] font-bold text-[#1E1E24] leading-[1.15] sm:leading-[1.12] tracking-tight mb-3 sm:mb-4">
                 Frequently asked questions
               </h2>
 
-              <p className="text-sm sm:text-base text-[#5A5A63] leading-relaxed max-w-md mb-10">
+              <p className="text-xs sm:text-base text-[#5A5A63] leading-relaxed max-w-md mb-6 sm:mb-10">
                 Find quick answers to common questions about our services, bridal packages, pricing, and appointments across Karachi.
               </p>
             </div>
 
             {/* "Still have questions?" Card matching user's layout & styled to theme */}
-            <div className="bg-[#1E1E24] text-white p-7 sm:p-9 rounded-3xl border border-[#28282F] shadow-lg max-w-md mt-4 hover:border-[#ED5642]/60 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-400 group">
+            <div className="bg-[#1E1E24] text-white p-5 sm:p-9 rounded-2xl sm:rounded-3xl border border-[#28282F] shadow-lg max-w-md mt-2 sm:mt-4 hover:border-[#ED5642]/60 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-400 group">
               {/* Avatar Cluster + "+ You" Pill */}
               <div className="flex items-center gap-2 mb-6">
                 <div className="flex -space-x-3">

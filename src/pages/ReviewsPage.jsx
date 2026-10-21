@@ -64,18 +64,18 @@ export default function ReviewsPage({ onOpenBooking }) {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner */}
-      <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
+      <section className="bg-white border-b border-[#EAEAEB] py-10 sm:py-20">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-3">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
               <span>CLIENT EXPERIENCES</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-[#1E1E24] leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4 sm:mb-6">
               Loved by Over 50,000 Karachi Brides & Clinic Guests.
             </h1>
-            <p className="text-base sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
               Read authentic, unfiltered testimonials from brides, clinical patients, and salon patrons who trust Najla’s Beauty Clinic & Institute across our 9 Karachi locations.
             </p>
           </div>
@@ -86,39 +86,39 @@ export default function ReviewsPage({ onOpenBooking }) {
       <SkinEnvyTestimonials onOpenBooking={onOpenBooking} />
 
       {/* Extended Client Reviews Grid */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 scroll-reveal">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-16 scroll-reveal">
             <div className="max-w-xl">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
                 RECENT TESTIMONIALS
               </span>
-              <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
                 Stories from every Karachi branch.
               </h2>
             </div>
 
-            <div className="flex items-center gap-2 p-3.5 bg-[#F7F7F8] hover:bg-[#FDF6F4] border border-[#EAEAEB] hover:border-[#ED5642]/30 rounded-2xl text-xs font-bold text-[#1E1E24] transition-all duration-300 shadow-2xs">
+            <div className="flex items-center gap-2 p-3 sm:p-3.5 bg-[#F7F7F8] hover:bg-[#FDF6F4] border border-[#EAEAEB] hover:border-[#ED5642]/30 rounded-xl sm:rounded-2xl text-[11px] sm:text-xs font-bold text-[#1E1E24] transition-all duration-300 shadow-2xs w-fit">
               <div className="flex text-[#ED5642]">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-3.5 h-3.5 fill-current" />
                 ))}
               </div>
-              <span>4.9 / 5.0 Average Rating across Karachi</span>
+              <span>4.9 / 5.0 Average Rating</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {extendedReviews.map((item, idx) => {
               const delayClass = `scroll-reveal-delay-${(idx % 6) + 1}`
               return (
                 <div
                   key={idx}
-                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 p-7 rounded-2xl flex flex-col justify-between card-hover hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group`}
+                  className={`scroll-reveal ${delayClass} bg-[#F7F7F8] hover:bg-white border border-[#EAEAEB] hover:border-[#ED5642]/50 p-4 sm:p-7 rounded-2xl flex flex-col justify-between card-hover hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 group`}
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex text-[#ED5642] group-hover:scale-105 transition-transform">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <div className="flex text-[#ED5642]">
                         {[...Array(item.stars)].map((_, i) => (
                           <Star key={i} className="w-3.5 h-3.5 fill-current" />
                         ))}
@@ -126,12 +126,12 @@ export default function ReviewsPage({ onOpenBooking }) {
                       <span className="text-[10px] text-[#8B8B93] uppercase tracking-wider">{item.date}</span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-6 italic group-hover:text-[#1E1E24] transition-colors duration-300">
+                    <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-4 sm:mb-6 italic group-hover:text-[#1E1E24] transition-colors duration-300">
                       "{item.review}"
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-[#EAEAEB]">
+                  <div className="pt-3 sm:pt-4 border-t border-[#EAEAEB]">
                     <h4 className="font-bold text-sm text-[#1E1E24] group-hover:text-[#ED5642] transition-colors duration-300">{item.author}</h4>
                     <span className="text-[11px] text-[#ED5642] font-semibold block">{item.treatment}</span>
                     <span className="text-[10px] text-[#8B8B93] block mt-0.5">{item.branch}</span>

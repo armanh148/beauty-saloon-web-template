@@ -122,18 +122,18 @@ export default function ContactPage({ onOpenBooking }) {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner */}
-      <section className="bg-white border-b border-[#EAEAEB] py-16 sm:py-24">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
+      <section className="bg-white border-b border-[#EAEAEB] py-10 sm:py-20">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
           <div className="max-w-4xl scroll-reveal">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-4">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#ED5642] mb-3">
               <Link to="/" className="hover:underline text-[#5A5A63]">HOME</Link>
               <span>/</span>
               <span>KARACHI NETWORK & CONTACT</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-[#1E1E24] leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight mb-4 sm:mb-6">
               Contact Najla’s & Find Your Nearest Karachi Flagship Branch.
             </h1>
-            <p className="text-base sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-lg text-[#5A5A63] leading-relaxed max-w-3xl">
               With 9 accessible branches across Karachi, exceptional bridal styling, clinical skincare, and certified hair treatments are never more than a short drive away.
             </p>
           </div>
@@ -141,55 +141,55 @@ export default function ContactPage({ onOpenBooking }) {
       </section>
 
       {/* Main Contact Grid: Inquiry Form & Quick Helpline Box */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white overflow-hidden">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white overflow-hidden">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             {/* Left: Quick Helpline Cards */}
             <div className="lg:col-span-5 flex flex-col gap-6 scroll-reveal-left">
               <div>
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
                   CENTRAL HELPLINE
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-4xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight mb-3 sm:mb-4">
                   We’re here to assist your bridal planning.
                 </h2>
-                <p className="text-sm text-[#5A5A63] leading-relaxed mb-8">
+                <p className="text-xs sm:text-sm text-[#5A5A63] leading-relaxed mb-6 sm:mb-8">
                   Connect directly with our master concierge for dates, customized packages, and pricing inquiries across any of our 9 Karachi salons.
                 </p>
               </div>
 
-              <div className="p-7 bg-[#F7F7F8] border border-[#EAEAEB] flex flex-col gap-5 hover:border-[#ED5642]/40 transition-all duration-300 shadow-xs hover:shadow-md">
-                <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300 shadow-xs">
-                    <Phone className="w-5 h-5" />
+              <div className="p-4 sm:p-7 bg-[#F7F7F8] rounded-2xl border border-[#EAEAEB] flex flex-col gap-4 sm:gap-5 hover:border-[#ED5642]/40 transition-all duration-300 shadow-xs hover:shadow-md">
+                <div className="flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0 rounded-xl group-hover:scale-105 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300 shadow-xs">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8B8B93] block">Direct Phone Helpline</span>
-                    <a href="tel:03341430303" className="text-lg font-extrabold text-[#1E1E24] hover:text-[#ED5642] transition-colors inline-block hover:translate-x-1 duration-200">
+                    <a href="tel:03341430303" className="text-base sm:text-lg font-extrabold text-[#1E1E24] hover:text-[#ED5642] transition-colors inline-block">
                       0334-1430303
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#1EBE5D] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#1EBE5D] group-hover:text-white transition-all duration-300 shadow-xs">
-                    <MessageCircle className="w-5 h-5" />
+                <div className="flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white border border-[#EAEAEB] text-[#1EBE5D] flex items-center justify-center flex-shrink-0 rounded-xl group-hover:scale-105 group-hover:bg-[#1EBE5D] group-hover:text-white transition-all duration-300 shadow-xs">
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8B8B93] block">Official WhatsApp Support</span>
-                    <a href="https://wa.me/923341430303" target="_blank" rel="noreferrer" className="text-lg font-extrabold text-[#1EBE5D] hover:underline inline-block hover:translate-x-1 duration-200">
+                    <a href="https://wa.me/923341430303" target="_blank" rel="noreferrer" className="text-base sm:text-lg font-extrabold text-[#1EBE5D] hover:underline inline-block">
                       0334-1430303 (Instant Reply)
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 group">
-                  <div className="w-10 h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300 shadow-xs">
-                    <Clock className="w-5 h-5" />
+                <div className="flex items-start gap-3 sm:gap-4 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white border border-[#EAEAEB] text-[#ED5642] flex items-center justify-center flex-shrink-0 rounded-xl group-hover:scale-105 group-hover:bg-[#ED5642] group-hover:text-white transition-all duration-300 shadow-xs">
+                    <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#8B8B93] block">Operating Hours</span>
-                    <span className="text-sm font-bold text-[#1E1E24]">
+                    <span className="text-xs sm:text-sm font-bold text-[#1E1E24]">
                       Daily 10:30 AM — 08:30 PM (All 7 Days)
                     </span>
                   </div>
@@ -198,25 +198,25 @@ export default function ContactPage({ onOpenBooking }) {
             </div>
 
             {/* Right: Direct Contact Form */}
-            <div className="lg:col-span-7 bg-[#F7F7F8] p-8 sm:p-12 border border-[#EAEAEB] scroll-reveal-right delay-200 hover:border-[#ED5642]/30 transition-all duration-300 shadow-xs">
-              <h3 className="text-2xl font-bold text-[#1E1E24] mb-2">Send an Instant Inquiry</h3>
-              <p className="text-xs text-[#5A5A63] mb-8">
+            <div className="lg:col-span-7 bg-[#F7F7F8] p-4 sm:p-12 rounded-2xl sm:rounded-3xl border border-[#EAEAEB] scroll-reveal-right delay-200 hover:border-[#ED5642]/30 transition-all duration-300 shadow-xs">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1E1E24] mb-1 sm:mb-2">Send an Instant Inquiry</h3>
+              <p className="text-xs text-[#5A5A63] mb-6 sm:mb-8">
                 Fill in your details to immediately forward your inquiry to our central reservation desk.
               </p>
 
               {formSent ? (
-                <div className="p-6 bg-white border border-[#ED5642] text-center animate-fade-in">
-                  <Check className="w-8 h-8 text-[#ED5642] mx-auto mb-2" />
-                  <h4 className="text-lg font-bold text-[#1E1E24] mb-1">Inquiry Forwarded!</h4>
+                <div className="p-5 sm:p-6 bg-white border border-[#ED5642] rounded-xl text-center animate-fade-in">
+                  <Check className="w-7 h-7 sm:w-8 sm:h-8 text-[#ED5642] mx-auto mb-2" />
+                  <h4 className="text-base sm:text-lg font-bold text-[#1E1E24] mb-1">Inquiry Forwarded!</h4>
                   <p className="text-xs text-[#5A5A63]">
                     Your message has been transferred to our WhatsApp concierge. Our team will respond promptly.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-3.5 sm:gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="text-xs font-bold text-[#1E1E24] block mb-1.5 uppercase tracking-wider">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1E1E24] block mb-1 uppercase tracking-wider">
                         Your Full Name *
                       </label>
                       <input
@@ -225,12 +225,12 @@ export default function ContactPage({ onOpenBooking }) {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Ayesha Malik"
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
+                        className="w-full bg-white p-3 rounded-lg border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-[#1E1E24] block mb-1.5 uppercase tracking-wider">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1E1E24] block mb-1 uppercase tracking-wider">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -239,20 +239,20 @@ export default function ContactPage({ onOpenBooking }) {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="e.g. 0300-1234567"
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
+                        className="w-full bg-white p-3 rounded-lg border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="text-xs font-bold text-[#1E1E24] block mb-1.5 uppercase tracking-wider">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1E1E24] block mb-1 uppercase tracking-wider">
                         Preferred Branch
                       </label>
                       <select
                         value={formData.branch}
                         onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
+                        className="w-full bg-white p-3 rounded-lg border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       >
                         {branches.map((b) => (
                           <option key={b.id} value={b.name}>{b.name}</option>
@@ -261,13 +261,13 @@ export default function ContactPage({ onOpenBooking }) {
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-[#1E1E24] block mb-1.5 uppercase tracking-wider">
+                      <label className="text-[11px] sm:text-xs font-bold text-[#1E1E24] block mb-1 uppercase tracking-wider">
                         Service of Interest
                       </label>
                       <select
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
+                        className="w-full bg-white p-3 rounded-lg border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                       >
                         <option value="Bridal Makeover (Barat / Walima)">Bridal Makeover (Barat / Walima)</option>
                         <option value="HydraFacial MD 7-Step">HydraFacial MD 7-Step</option>
@@ -279,7 +279,7 @@ export default function ContactPage({ onOpenBooking }) {
                   </div>
 
                   <div>
-                    <label className="text-xs font-bold text-[#1E1E24] block mb-1.5 uppercase tracking-wider">
+                    <label className="text-[11px] sm:text-xs font-bold text-[#1E1E24] block mb-1 uppercase tracking-wider">
                       Event Date & Details
                     </label>
                     <textarea
@@ -287,13 +287,13 @@ export default function ContactPage({ onOpenBooking }) {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Specify your wedding date, branch preferences, or service questions..."
-                      className="w-full bg-white p-3 border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
+                      className="w-full bg-white p-3 rounded-lg border border-[#EAEAEB] text-xs text-[#1E1E24] outline-none focus:border-[#ED5642] transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="skinenvy-btn-primary flex items-center justify-center gap-2 cursor-pointer mt-2 hover:shadow-lg transition-all duration-300 hover:scale-[1.01]"
+                    className="skinenvy-btn-primary flex items-center justify-center gap-2 cursor-pointer mt-2 h-12 rounded-full font-bold text-xs uppercase tracking-wider hover:shadow-lg transition-all duration-300"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Message on WhatsApp</span>
@@ -306,25 +306,25 @@ export default function ContactPage({ onOpenBooking }) {
       </section>
 
       {/* Complete 9 Karachi Branches Directory */}
-      <section className="py-24 sm:py-32 border-b border-[#EAEAEB] bg-white">
-        <div className="w-full px-6 sm:px-10 lg:px-14">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 scroll-reveal">
+      <section className="py-12 sm:py-24 border-b border-[#EAEAEB] bg-white">
+        <div className="w-full px-4 sm:px-10 lg:px-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12 scroll-reveal">
             <div className="max-w-xl">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ED5642] block mb-2 sm:mb-3">
                 KARACHI DIRECTORY
               </span>
-              <h2 className="text-3xl sm:text-5xl font-bold text-[#1E1E24] leading-[1.12] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1E1E24] leading-[1.15] tracking-tight">
                 All 9 flagship branch locations.
               </h2>
             </div>
 
             {/* Area Filter Buttons */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {areas.map((area) => (
                 <button
                   key={area}
                   onClick={() => setActiveArea(area)}
-                  className={`px-4 py-2 text-xs font-bold transition-all duration-300 cursor-pointer border hover:-translate-y-0.5 ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold rounded-full transition-all duration-300 cursor-pointer border ${
                     activeArea === area
                       ? 'bg-[#ED5642] text-white border-[#ED5642] shadow-sm'
                       : 'bg-white text-[#5A5A63] hover:bg-[#EAEAEB] border-[#EAEAEB]'
@@ -336,15 +336,15 @@ export default function ContactPage({ onOpenBooking }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filtered.map((b, idx) => (
               <div
                 key={b.id}
-                className={`bg-white p-7 border border-[#EAEAEB] flex flex-col justify-between card-hover shadow-xs group scroll-reveal-scale scroll-reveal-delay-${(idx % 4) + 1}`}
+                className={`bg-white p-4 sm:p-7 rounded-2xl border border-[#EAEAEB] flex flex-col justify-between card-hover shadow-xs group scroll-reveal-scale scroll-reveal-delay-${(idx % 4) + 1}`}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-[#F7F7F8] px-2.5 py-1 border border-[#EAEAEB] group-hover:border-[#ED5642]/30 transition-colors">
+                  <div className="flex items-center justify-between mb-2.5 sm:mb-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#ED5642] bg-[#F7F7F8] px-2.5 py-0.5 sm:py-1 rounded-full border border-[#EAEAEB] group-hover:border-[#ED5642]/30 transition-colors">
                       {b.area}
                     </span>
                     <span className="text-xs text-[#8B8B93] flex items-center gap-1">
@@ -353,16 +353,16 @@ export default function ContactPage({ onOpenBooking }) {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#1E1E24] mb-1 group-hover:text-[#ED5642] transition-colors">{b.name}</h3>
-                  <span className="text-xs font-semibold text-[#ED5642] block mb-4">{b.highlight}</span>
+                  <h3 className="text-base sm:text-lg font-bold text-[#1E1E24] mb-1 group-hover:text-[#ED5642] transition-colors">{b.name}</h3>
+                  <span className="text-xs font-semibold text-[#ED5642] block mb-3 sm:mb-4">{b.highlight}</span>
 
-                  <p className="text-xs text-[#5A5A63] leading-relaxed mb-6 flex items-start gap-2">
-                    <MapPin className="w-4 h-4 text-[#8B8B93] flex-shrink-0 mt-0.5 group-hover:text-[#ED5642] group-hover:animate-bounce-subtle transition-colors" />
+                  <p className="text-xs text-[#5A5A63] leading-relaxed mb-4 sm:mb-6 flex items-start gap-2">
+                    <MapPin className="w-4 h-4 text-[#8B8B93] flex-shrink-0 mt-0.5 group-hover:text-[#ED5642] transition-colors" />
                     <span>{b.address}</span>
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#EAEAEB] flex items-center justify-between">
+                <div className="pt-3 sm:pt-4 border-t border-[#EAEAEB] flex items-center justify-between">
                   <a
                     href={`tel:${b.phone.replace(/[^0-9]/g, '')}`}
                     className="text-xs font-bold text-[#1E1E24] hover:text-[#ED5642] flex items-center gap-1.5 transition-colors"
@@ -375,7 +375,7 @@ export default function ContactPage({ onOpenBooking }) {
                     href={`https://wa.me/${b.whatsapp}?text=Hi%20Najla's,%20I%20would%20like%20to%20visit%20your%20${encodeURIComponent(b.name)}%20branch`}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs font-bold text-[#1EBE5D] hover:underline flex items-center gap-1 hover:translate-x-0.5 transition-transform"
+                    className="text-xs font-bold text-[#1EBE5D] hover:underline flex items-center gap-1"
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
                     <span>WhatsApp</span>
